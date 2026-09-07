@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { ArrowUpRight, Clock3, Asterisk } from 'lucide-react';
+import { ArrowUpRight, Clock3, PenLine } from 'lucide-react';
 import { articles } from '@/lib/content';
 import { Breadcrumb, Eyebrow, CTA } from '@/components/site/shared';
 type Props = { params: Promise<{ slug: string }> };
@@ -47,7 +47,7 @@ export default async function Article({ params }: Props) {
         <p>{a.excerpt}</p>
         <div className="article-byline">
           <span>
-            <Asterisk size={23} />
+            <PenLine size={19} />
             Timemac Perspective
           </span>
           <span>

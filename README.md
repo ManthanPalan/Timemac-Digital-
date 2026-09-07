@@ -29,4 +29,4 @@ Business email and phone are intentionally unset, as requested. The contact form
 
 ## Brand assets
 
-The healthcare photograph and social preview are original generated assets. They do not depict a named client or member of staff. The favicon uses the site’s asterisk brand motif. There are no invented client logos, testimonials or outcome statistics.
+The healthcare photograph and social preview are original generated assets. They do not depict a named client or member of staff. The brand uses an editorial identity: Archivo sans-serif, Bodoni Moda italic, warm paper, ink and vermilion. The favicon uses the typographic “t.” mark. Font licenses are included in `public/fonts`. There are no invented client logos, testimonials or outcome statistics.

@@ -2,7 +2,6 @@ import Link from 'next/link';
 import {
   ArrowUpRight,
   ArrowRight,
-  Asterisk,
   Search,
   MousePointer2,
   Workflow,
@@ -67,18 +66,18 @@ export function CTA() {
         <div>
           <Eyebrow>YOUR NEXT CHAPTER STARTS HERE</Eyebrow>
           <h2>
-            A little conversation.
+            Let’s make
             <br />
-            <span>A lot of possibility.</span>
+            <span>your next move.</span>
           </h2>
           <p>Tell us where you are. Let’s figure out where you could go.</p>
           <Link href="/contact" className="button button-dark">
             Let’s talk growth <ArrowUpRight size={18} />
           </Link>
         </div>
-        <Asterisk
-          className="cta-asterisk"
-          strokeWidth={1.15}
+        <ArrowUpRight
+          className="cta-direction-arrow"
+          strokeWidth={0.8}
           aria-hidden="true"
         />
         <span className="cta-side-note">
@@ -132,7 +131,7 @@ export function ArticleCards({
                 THE TIMEMAC PERSPECTIVE / 0
                 {articles.findIndex((item) => item.slug === a.slug) + 1}
               </span>
-              {a.theme === 'sage' ? (
+              {a.theme === 'paper' ? (
                 <>
                   <HeartPulse />
                   <span>
@@ -141,7 +140,7 @@ export function ArticleCards({
                     To <em>care.</em>
                   </span>
                 </>
-              ) : a.theme === 'lime' ? (
+              ) : a.theme === 'rust' ? (
                 <>
                   <MousePointer2 />
                   <span>

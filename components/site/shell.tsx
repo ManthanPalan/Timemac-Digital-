@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
-import { ArrowUpRight, ArrowRight, Asterisk, Menu, MapPin } from 'lucide-react';
+import { ArrowUpRight, ArrowRight, Menu, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
   Sheet,
@@ -20,10 +20,12 @@ export function Brand({ large = false }: { large?: boolean }) {
       aria-label="Timemac Digital home"
       className={'brand' + (large ? ' brand-large' : '')}
     >
-      <Asterisk aria-hidden="true" strokeWidth={2.8} />
+      <span className="brand-symbol" aria-hidden="true">
+        t.
+      </span>
       <span>
         timemac<span className="brand-dot">.</span>
-        <small>DIGITAL GROWTH STUDIO</small>
+        <small>INDEPENDENT GROWTH STUDIO</small>
       </span>
     </Link>
   );
@@ -44,10 +46,7 @@ export function Header() {
         Skip to content
       </a>
       <div className="announcement">
-        <span>
-          <span className="status-dot" /> A little local knowledge. A lot of
-          growth potential.
-        </span>
+        <span>INDEPENDENT THINKING. LOCAL UNDERSTANDING.</span>
         <Link href="/locations">
           Udupi · Manipal · Mangalore <ArrowUpRight size={12} />
         </Link>

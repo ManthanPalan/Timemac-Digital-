@@ -1,19 +1,20 @@
 import type { Metadata } from 'next';
 import { siteOrigin } from '@/lib/site';
 import './globals.css';
+import './editorial.css';
 import { Header, Footer } from '@/components/site/shell';
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteOrigin),
   title: {
-    default: 'Timemac Digital — Local roots. Remarkable growth.',
+    default: 'Timemac Digital — Your work. A wider world.',
     template: '%s | Timemac Digital',
   },
   icons: { icon: '/favicon.svg' },
   openGraph: {
     type: 'website',
     siteName: 'Timemac Digital',
-    title: 'Timemac Digital — Local roots. Remarkable growth.',
+    title: 'Timemac Digital — Your work. A wider world.',
     description:
       'Healthcare-first digital marketing for Udupi, Manipal and Mangalore.',
     images: [
@@ -21,13 +22,13 @@ export const metadata: Metadata = {
         url: '/og.png',
         width: 1536,
         height: 1024,
-        alt: 'Timemac Digital — Local roots. Remarkable growth.',
+        alt: 'Timemac Digital — Your work. A wider world.',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Timemac Digital — Local roots. Remarkable growth.',
+    title: 'Timemac Digital — Your work. A wider world.',
     description:
       'Healthcare-first digital marketing for Udupi, Manipal and Mangalore.',
     images: ['/og.png'],
@@ -43,14 +44,14 @@ export default function RootLayout({
       <head>
         <link
           rel="preload"
-          href="/fonts/manrope.woff2"
+          href="/fonts/archivo.woff2"
           as="font"
           type="font/woff2"
           crossOrigin="anonymous"
         />
         <link
           rel="preload"
-          href="/fonts/dm-sans.woff2"
+          href="/fonts/bodoni-moda-italic.woff2"
           as="font"
           type="font/woff2"
           crossOrigin="anonymous"

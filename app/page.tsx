@@ -1,12 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import {
-  ArrowUpRight,
-  ArrowRight,
-  Sparkles,
-  HeartPulse,
-  Check,
-} from 'lucide-react';
+import { ArrowUpRight, ArrowRight } from 'lucide-react';
 import {
   ServiceGrid,
   CTA,
@@ -22,93 +16,74 @@ export default function Home() {
   return (
     <>
       <main id="main">
-        <section className="hero wrap">
-          <div className="hero-copy">
-            <span className="eyebrow">
-              <span className="eyebrow-line" /> YOUR NEIGHBOURHOOD. OUR NEXT BIG
-              THING.
-            </span>
+        <section className="editorial-hero wrap">
+          <div className="editorial-hero-top">
+            <Eyebrow>DIGITAL MARKETING / COASTAL KARNATAKA</Eyebrow>
+            <span>STRATEGY. DESIGN. REAL CONNECTIONS.</span>
+          </div>
+          <div className="editorial-hero-title">
             <h1>
-              Local roots.
+              Your work.
               <br />
-              Remarkable
-              <br />
-              <span className="highlight">
-                growth.
-                <ArrowUpRight aria-hidden="true" />
-              </span>
+              <em>A wider world.</em>
             </h1>
-            <p>
-              Big ambition deserves a better digital partner. We help healthcare
-              brands and local businesses turn online attention into real-world
-              growth.
-            </p>
-            <div className="hero-actions">
-              <Link href="/contact" className="button button-dark">
-                Find your growth potential <ArrowUpRight size={18} />
-              </Link>
-              <Link href="/services" className="text-link">
-                Explore services <ArrowRight size={17} />
-              </Link>
-            </div>
-            <div className="hero-footnote">
-              <span>
-                <Check size={15} /> Strategy before spend
-              </span>
-              <span>
-                <Check size={15} /> Built around your business
-              </span>
+            <div className="hero-margin-note">
+              <span>LOCAL ROOTS.</span>
+              <p>
+                For the ambitious.
+                <br />
+                For the independent.
+                <br />
+                For what’s next.
+              </p>
+              <ArrowUpRight strokeWidth={1} />
             </div>
           </div>
-          <div className="hero-visual">
-            <Image
-              unoptimized
-              className="hero-photo"
-              src="/images/healthcare.jpg"
-              alt="An Indian healthcare professional listening to a patient in a bright, welcoming clinic"
-              width={1024}
-              height={1536}
-              fetchPriority="high"
-            />
-            <div className="image-shade" />
-            <span className="photo-label">
-              <span className="status-dot" /> HEALTHCARE AT HEART
-            </span>
-            <div className="photo-copy">
-              <span>
-                Good care deserves
-                <br />
-                to be found.
+          <div className="editorial-hero-bottom">
+            <div className="editorial-intro">
+              <span className="editorial-small-label">
+                GOOD WORK DESERVES TO BE SEEN.
               </span>
-              <Link
-                href="/healthcare"
-                className="circle-link"
-                aria-label="Explore healthcare marketing"
-              >
-                <ArrowUpRight />
+              <p>
+                We help healthcare brands and ambitious local businesses become
+                easier to find, harder to forget, and simpler to choose.
+              </p>
+              <Link href="/contact" className="button button-accent">
+                Make your next move <ArrowUpRight size={19} />
+              </Link>
+              <Link href="/services" className="text-link">
+                Explore our services <ArrowRight size={17} />
               </Link>
             </div>
-            <div className="floating-note">
-              <div className="note-icon">
-                <HeartPulse size={22} />
+            <Link href="/healthcare" className="editorial-photo">
+              <Image
+                unoptimized
+                src="/images/healthcare.jpg"
+                alt="A physician in conversation with a patient"
+                width={1024}
+                height={1536}
+                fetchPriority="high"
+              />
+              <div className="editorial-photo-caption">
+                <span>
+                  <small>OUR SPECIALIST FOCUS</small>Healthcare. With a human
+                  touch.
+                </span>
+                <ArrowUpRight size={26} />
               </div>
-              <div>
-                <strong>Your expertise. A wider reach.</strong>
-                <span>Connecting care with community.</span>
-              </div>
-              <Sparkles size={19} />
-            </div>
+              <span className="photo-index">01 / HEALTHCARE</span>
+            </Link>
           </div>
         </section>
         <LocalStrip />
         <section className="section wrap">
           <div className="section-heading">
             <div>
-              <Eyebrow>01 / WHAT WE DO</Eyebrow>
+              <Eyebrow>01 / OUR CAPABILITIES</Eyebrow>
               <h2>
-                Good businesses.
+                The right tools.
                 <br />
-                <span className="muted-text">Meet great marketing.</span>
+                <span className="muted-text">A clear direction.</span>
               </h2>
             </div>
             <p>
@@ -140,13 +115,12 @@ export default function Home() {
               </span>
             </div>
             <div className="healthcare-feature-copy">
-              <Eyebrow>02 / HEALTHCARE IS CLOSE TO OUR HEART</Eyebrow>
+              <Eyebrow>02 / HEALTHCARE SPECIALISTS</Eyebrow>
               <h2>
                 You care for people.
                 <br />
                 <span>
-                  We help them
-                  <br />
+                  We help them <br />
                   find you.
                 </span>
               </h2>
@@ -162,7 +136,7 @@ export default function Home() {
                   'A connected enquiry-to-appointment journey',
                 ]}
               />
-              <Link href="/healthcare" className="button button-lime">
+              <Link href="/healthcare" className="button button-accent">
                 Explore healthcare marketing <ArrowUpRight size={18} />
               </Link>
               <div className="healthcare-specialties">
@@ -175,7 +149,7 @@ export default function Home() {
         <section className="section wrap">
           <div className="section-heading">
             <div>
-              <Eyebrow>03 / YOUR WORLD. OUR FOCUS.</Eyebrow>
+              <Eyebrow>03 / SECTORS WE UNDERSTAND</Eyebrow>
               <h2>
                 Different industries.
                 <br />
@@ -193,7 +167,7 @@ export default function Home() {
           <div className="wrap">
             <div className="section-heading">
               <div>
-                <Eyebrow>04 / SIMPLE PROCESS. SERIOUS INTENT.</Eyebrow>
+                <Eyebrow>04 / HOW WE WORK</Eyebrow>
                 <h2>
                   Less guesswork.
                   <br />
@@ -257,7 +231,7 @@ export default function Home() {
         <section className="section wrap insights-home">
           <div className="section-heading">
             <div>
-              <Eyebrow>05 / A LITTLE PERSPECTIVE</Eyebrow>
+              <Eyebrow>05 / NOTES FROM THE STUDIO</Eyebrow>
               <h2>
                 Fresh thinking.
                 <br />

@@ -22,8 +22,7 @@ export default async function Contact({
           <h1>
             Your next chapter
             <br />
-            could start
-            <br />
+            could start <br />
             <span className="muted-text">right here.</span>
           </h1>
           <p>

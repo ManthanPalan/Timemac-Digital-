@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { ArrowUpRight, Asterisk, Heart, Compass, ScanEye } from 'lucide-react';
+import { ArrowUpRight, Heart, Compass, ScanEye } from 'lucide-react';
 import { PageHero, Eyebrow, CTA, LocalStrip } from '@/components/site/shared';
 export const metadata: Metadata = {
   title: 'About our digital growth studio',
@@ -18,7 +18,9 @@ export default function About() {
       />
       <section className="about-statement wrap">
         <div className="about-brand-panel">
-          <Asterisk strokeWidth={1.3} />
+          <span className="about-monogram" aria-hidden="true">
+            t.
+          </span>
           <span>
             local roots.
             <br />

@@ -375,7 +375,7 @@ export const articles = [
     excerpt:
       'A practical way to look at the steps between a local search and an appointment enquiry.',
     read: '4 min read',
-    theme: 'sage',
+    theme: 'paper',
     sections: [
       [
         'Start with the questions people bring',
@@ -406,7 +406,7 @@ export const articles = [
     excerpt:
       'Five questions to ask about your offer, landing page and enquiry process before launching.',
     read: '3 min read',
-    theme: 'lime',
+    theme: 'rust',
     sections: [
       [
         'Can a visitor understand the offer?',
@@ -437,7 +437,7 @@ export const articles = [
     excerpt:
       'Start with a simple enquiry pipeline and the habits that make it useful every day.',
     read: '4 min read',
-    theme: 'peach',
+    theme: 'ink',
     sections: [
       [
         'Start with the real workflow',
