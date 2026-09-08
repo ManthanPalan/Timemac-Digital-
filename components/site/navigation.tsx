@@ -8,7 +8,33 @@ import { activeNavigationGroup, navigationGroups } from '@/lib/navigation';
 export function DesktopNavigation({ pathname }: { pathname: string }) {
   const [expanded, setExpanded] = useState<string | null>(null);
   const navigation = useRef<HTMLElement>(null);
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const activeGroup = activeNavigationGroup(pathname);
+
+  const cancelClose = () => {
+    if (closeTimer.current !== null) {
+      clearTimeout(closeTimer.current);
+      closeTimer.current = null;
+    }
+  };
+  const openGroup = (id: string) => {
+    cancelClose();
+    setExpanded(id);
+  };
+  const closeAfterPointerLeaves = (id: string) => {
+    cancelClose();
+    closeTimer.current = setTimeout(() => {
+      setExpanded((current) => (current === id ? null : current));
+      closeTimer.current = null;
+    }, 180);
+  };
+
+  useEffect(
+    () => () => {
+      if (closeTimer.current !== null) clearTimeout(closeTimer.current);
+    },
+    [],
+  );
 
   useEffect(() => {
     if (!expanded) return;
@@ -47,7 +73,17 @@ export function DesktopNavigation({ pathname }: { pathname: string }) {
         const active = activeGroup === group.id;
         const isOpen = expanded === group.id;
         return (
-          <div className="nav-group" key={group.id}>
+          <div
+            className="nav-group"
+            key={group.id}
+            onPointerEnter={(event) => {
+              if (event.pointerType === 'mouse') openGroup(group.id);
+            }}
+            onPointerLeave={(event) => {
+              if (event.pointerType === 'mouse')
+                closeAfterPointerLeaves(group.id);
+            }}
+          >
             <button
               type="button"
               id={`desktop-trigger-${group.id}`}
@@ -55,12 +91,12 @@ export function DesktopNavigation({ pathname }: { pathname: string }) {
               data-active={active || undefined}
               aria-expanded={isOpen}
               aria-controls={`desktop-panel-${group.id}`}
-              onClick={() => setExpanded(isOpen ? null : group.id)}
+              onClick={() => openGroup(group.id)}
               onKeyDown={(event) => {
                 if (event.key !== 'ArrowDown' && event.key !== 'ArrowUp')
                   return;
                 event.preventDefault();
-                setExpanded(group.id);
+                openGroup(group.id);
                 const last = event.key === 'ArrowUp';
                 requestAnimationFrame(() => {
                   const links =

@@ -1,10 +1,17 @@
-/* Shared page groups, with click and keyboard disclosure on every screen. */
+/* Hover dropdowns on desktop; touch and keyboard disclosure remain available. */
 .site-header {
   position: relative;
   z-index: 20;
 }
 .site-header .grouped-navigation {
+  position: relative;
+  align-self: stretch;
   gap: clamp(14px, 1.6vw, 24px);
+}
+.nav-group {
+  display: flex;
+  align-items: center;
+  height: 100%;
 }
 .nav-group-trigger {
   display: inline-flex;
@@ -35,8 +42,8 @@
 .nav-popover {
   position: absolute;
   top: calc(100% - 5px);
-  right: 64px;
-  width: min(720px, calc(100% - 128px));
+  left: 0;
+  width: min(720px, calc(100vw - 128px));
   max-height: calc(100dvh - 185px);
   overflow-y: auto;
   overscroll-behavior: contain;
