@@ -9,6 +9,9 @@ import {
   Building2,
   Store,
   Check,
+  MessagesSquare,
+  Plus,
+  Minus,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
@@ -18,32 +21,61 @@ import {
   AccordionContent,
 } from '@/components/ui/accordion';
 import { faqs, industries } from '@/lib/content';
-import { ArticleCards } from '@/components/site/shared';
+import { ArticleCards, Eyebrow } from '@/components/site/shared';
 
 export function FAQ() {
   return (
-    <section className="section wrap faq-section">
-      <div>
-        <span className="eyebrow">A FEW GOOD QUESTIONS</span>
-        <h2>
+    <section
+      className="section wrap faq-section faq-redesign"
+      aria-labelledby="faq-title"
+    >
+      <div className="faq-intro">
+        <Eyebrow>A FEW GOOD QUESTIONS</Eyebrow>
+        <h2 id="faq-title">
           Curious?
           <br />
           <span className="muted-text">Let’s clear things up.</span>
         </h2>
-        <Link className="text-link" href="/contact">
-          Have something else in mind? <ArrowUpRight size={16} />
-        </Link>
+        <p className="faq-intro-copy">
+          Straight answers about getting started, working together and what to
+          expect.
+        </p>
       </div>
-      <Accordion defaultValue={['0']} className="faq-list">
+      <Accordion
+        defaultValue={['0']}
+        className="faq-list"
+        aria-label="Frequently asked questions"
+      >
         {faqs.map(([q, a], i) => (
           <AccordionItem key={q} value={String(i)}>
-            <AccordionTrigger>{q}</AccordionTrigger>
-            <AccordionContent>
+            <AccordionTrigger>
+              <span className="faq-number" aria-hidden="true">
+                0{i + 1}
+              </span>
+              <span className="faq-question">{q}</span>
+              <span className="faq-toggle" aria-hidden="true">
+                <Plus className="faq-plus" size={18} />
+                <Minus className="faq-minus" size={18} />
+              </span>
+            </AccordionTrigger>
+            <AccordionContent className="faq-answer">
               <p>{a}</p>
             </AccordionContent>
           </AccordionItem>
         ))}
       </Accordion>
+      <div className="faq-help">
+        <span className="faq-help-icon">
+          <MessagesSquare size={25} strokeWidth={1.5} aria-hidden="true" />
+        </span>
+        <h3>Something more specific?</h3>
+        <p>
+          Start with your business, your goals and the questions on your mind.
+        </p>
+        <Link className="text-link" href="/contact">
+          Plan a conversation <ArrowUpRight size={18} />
+        </Link>
+      </div>
     </section>
   );
 }
