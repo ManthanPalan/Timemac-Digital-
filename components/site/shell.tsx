@@ -37,9 +37,18 @@ const links = [
   ['About us', '/about'],
   ['Insights', '/insights'],
 ];
+const mobileLinks = [
+  ['Home', '/'],
+  ...links,
+  ['Industries', '/industries'],
+  ['Our locations', '/locations'],
+  ['Let’s talk growth', '/contact'],
+];
 export function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const isCurrent = (url: string) =>
+    pathname === url || (url !== '/' && pathname.startsWith(url + '/'));
   return (
     <>
       <a className="skip-link" href="#main">
@@ -58,11 +67,7 @@ export function Header() {
             <Link
               href={url}
               key={url}
-              aria-current={
-                pathname === url || pathname.startsWith(url + '/')
-                  ? 'page'
-                  : undefined
-              }
+              aria-current={isCurrent(url) ? 'page' : undefined}
             >
               {label}
               {label === 'Healthcare' && <span className="tiny-dot" />}
@@ -71,7 +76,9 @@ export function Header() {
         </nav>
         <div className="header-actions">
           <Link href="/contact" className="button button-dark nav-cta">
-            Let’s talk growth <ArrowUpRight size={16} />
+            <span className="nav-cta-full">Let’s talk growth</span>
+            <span className="nav-cta-short">Let’s talk</span>
+            <ArrowUpRight size={16} />
           </Link>
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger
@@ -92,32 +99,17 @@ export function Header() {
                 Timemac Digital · Udupi, Manipal & Mangalore
               </SheetDescription>
               <nav aria-label="Mobile navigation">
-                <Link onClick={() => setOpen(false)} href="/">
-                  Home
-                </Link>
-                {links.map(([label, url]) => (
+                {mobileLinks.map(([label, url]) => (
                   <Link
                     onClick={() => setOpen(false)}
                     href={url}
                     key={url}
-                    aria-current={pathname === url ? 'page' : undefined}
+                    aria-current={isCurrent(url) ? 'page' : undefined}
                   >
                     {label}
                     <ArrowUpRight size={19} />
                   </Link>
                 ))}
-                <Link onClick={() => setOpen(false)} href="/industries">
-                  Industries
-                  <ArrowUpRight size={19} />
-                </Link>
-                <Link onClick={() => setOpen(false)} href="/locations">
-                  Our locations
-                  <ArrowUpRight size={19} />
-                </Link>
-                <Link onClick={() => setOpen(false)} href="/contact">
-                  Let’s talk growth
-                  <ArrowUpRight size={19} />
-                </Link>
               </nav>
               <p className="mobile-signoff">
                 Local roots.
@@ -136,12 +128,17 @@ export function Footer() {
     <footer className="site-footer">
       <div className="wrap">
         <div className="footer-top">
-          <div>
+          <div className="footer-intro">
             <Brand />
-            <p>
-              Your neighbourhood growth partner.
-              <br />
-              Healthcare at heart. Ambition everywhere.
+            <p className="footer-summary">
+              <strong>
+                Your neighbourhood <span>growth partner.</span>
+              </strong>
+              <span>
+                Healthcare at heart.
+                <br />
+                Ambition everywhere.
+              </span>
             </p>
             <Link className="text-link" href="/contact">
               Start a conversation <ArrowUpRight size={16} />

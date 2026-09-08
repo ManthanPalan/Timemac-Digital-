@@ -378,3 +378,283 @@ main .editorial-intro > .hero-audience {
     line-height: 1.75;
   }
 }
+
+/* Carry the reading hierarchy through navigation and the footer. */
+.site-header .desktop-nav {
+  gap: 26px;
+}
+.site-header .desktop-nav a {
+  color: var(--ink);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  min-height: 48px;
+  white-space: nowrap;
+}
+.site-header .desktop-nav a::after {
+  height: 2px;
+  bottom: 5px;
+  background: var(--signal);
+}
+.site-header .desktop-nav a:is(:hover, [aria-current='page']) {
+  color: var(--signal);
+}
+.header-actions .nav-cta {
+  min-height: 48px;
+  font-size: 14px;
+  font-weight: 600;
+  gap: 14px;
+  white-space: nowrap;
+}
+.nav-cta-short {
+  display: none;
+}
+.mobile-panel [data-slot='sheet-title'] {
+  font-family: 'Archivo', Arial, sans-serif;
+  font-style: normal;
+  font-size: 25px;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 1.25;
+  color: var(--ink);
+}
+.mobile-panel [data-slot='sheet-description'] {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #57514b;
+}
+.mobile-panel nav a {
+  min-height: 60px;
+  padding-block: 16px;
+  font-size: 23px;
+  font-weight: 550;
+  line-height: 1.25;
+  letter-spacing: -0.035em;
+  color: var(--ink);
+}
+.mobile-panel nav a:is(:hover, [aria-current='page']) {
+  color: var(--signal);
+}
+.mobile-panel nav a[aria-current='page'] {
+  font-weight: 700;
+}
+.mobile-panel nav a svg {
+  width: 22px;
+  height: 22px;
+}
+.mobile-panel .mobile-signoff {
+  padding-top: 28px;
+  color: var(--ink);
+}
+.mobile-panel [data-slot='sheet-close'] {
+  width: 44px;
+  height: 44px;
+}
+.site-footer {
+  --footer-text: #fffaf3;
+  --footer-secondary: #ddd2c6;
+  --footer-accent: #f6a48b;
+  color: var(--footer-text);
+}
+.site-footer .footer-top {
+  grid-template-columns: minmax(0, 1.4fr) repeat(3, minmax(0, 1fr));
+  gap: 36px;
+  padding-top: 72px;
+}
+.site-footer .footer-summary {
+  margin-top: 28px;
+  max-width: 28ch;
+  color: var(--footer-secondary);
+  font-size: 18px;
+  line-height: 1.65;
+  letter-spacing: -0.015em;
+  text-wrap: pretty;
+}
+.footer-summary > strong {
+  display: block;
+  color: var(--footer-text);
+  font-size: clamp(26px, 2.2vw, 32px);
+  font-weight: 550;
+  letter-spacing: -0.04em;
+  line-height: 1.25;
+  margin-bottom: 16px;
+}
+.footer-summary > strong > span {
+  color: var(--footer-accent);
+}
+.footer-summary > span {
+  display: block;
+}
+.site-footer .footer-intro > .text-link {
+  display: inline-flex;
+  min-height: 48px;
+  margin-top: 24px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid var(--footer-accent);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--footer-text);
+}
+.site-footer .footer-intro > .text-link svg {
+  width: 21px;
+  height: 21px;
+  color: var(--footer-accent);
+}
+.site-footer .footer-column {
+  gap: 4px;
+}
+.site-footer .footer-column h3 {
+  margin-bottom: 18px;
+  color: var(--footer-accent);
+  font-size: 12px;
+  font-weight: 650;
+  letter-spacing: 0.1em;
+  line-height: 1.6;
+}
+.site-footer .footer-column a {
+  min-height: 44px;
+  padding-block: 8px;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.02em;
+  color: var(--footer-text);
+}
+.site-footer .footer-column a svg {
+  width: 17px;
+  height: 17px;
+  color: var(--footer-accent);
+}
+.site-footer .footer-location-note {
+  padding-top: 16px;
+  margin-top: 10px;
+  border-top: 1px solid #5c5147;
+  color: var(--footer-secondary);
+  font-size: 15px;
+  line-height: 1.7;
+}
+.site-footer .brand small {
+  font-size: 8px;
+  line-height: 1.5;
+  letter-spacing: 0.09em;
+  color: var(--footer-secondary);
+}
+.site-footer .footer-bottom {
+  flex-wrap: wrap;
+  color: var(--footer-secondary);
+  font-size: 13px;
+  line-height: 1.6;
+  gap: 16px 24px;
+}
+.site-footer .footer-bottom a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  min-width: 44px;
+  font-size: 14px;
+  color: var(--footer-text);
+}
+.site-footer a:is(:hover, :focus-visible) {
+  color: var(--footer-accent);
+}
+.site-footer a:focus-visible {
+  outline-color: var(--footer-accent);
+}
+@media (max-width: 1080px) {
+  .site-header .desktop-nav {
+    display: none;
+  }
+  .header-actions .mobile-menu-button {
+    display: inline-flex !important;
+    width: 44px !important;
+    height: 44px !important;
+    color: var(--ink);
+  }
+  .header-actions .mobile-menu-button svg {
+    width: 25px;
+    height: 25px;
+  }
+  .site-footer .footer-top {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 36px;
+  }
+  .site-footer .footer-intro {
+    grid-column: 1 / -1;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #5c5147;
+  }
+  .site-footer .footer-summary {
+    max-width: 44ch;
+  }
+  .site-footer .footer-column:last-child {
+    display: flex;
+  }
+}
+@media (max-width: 600px) {
+  .site-header {
+    gap: 8px;
+  }
+  .header-actions {
+    gap: 6px;
+  }
+  .header-actions .nav-cta {
+    font-size: 13px;
+    min-height: 44px;
+    padding-inline: 12px;
+  }
+  .nav-cta-full,
+  .header-actions .nav-cta svg {
+    display: none;
+  }
+  .nav-cta-short {
+    display: inline;
+  }
+  .site-footer .footer-top {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 32px 24px;
+    padding-top: 48px;
+  }
+  .site-footer .footer-column:last-child {
+    grid-column: 1 / -1;
+    padding-top: 24px;
+    border-top: 1px solid #5c5147;
+  }
+  .site-footer .footer-column a {
+    font-size: 16px;
+  }
+  .site-footer .footer-column h3 {
+    font-size: 11px;
+  }
+  .site-footer .footer-summary {
+    font-size: 17px;
+  }
+  .site-footer .footer-bottom {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .site-footer .footer-bottom > div {
+    width: 100%;
+    gap: 24px;
+  }
+  .site-footer .footer-bottom > div > a:last-child {
+    margin-left: auto;
+  }
+}
+@media (max-width: 380px) {
+  .site-header .brand {
+    gap: 8px;
+  }
+  .site-header .brand > span:not(.brand-symbol) {
+    font-size: 23px;
+  }
+  .site-header .brand-symbol {
+    width: 29px;
+    height: 29px;
+    font-size: 25px !important;
+  }
+  .header-actions .nav-cta {
+    padding-inline: 10px;
+  }
+}
