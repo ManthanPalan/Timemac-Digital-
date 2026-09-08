@@ -1,0 +1,202 @@
+/* Shared page groups, with click and keyboard disclosure on every screen. */
+.site-header {
+  position: relative;
+  z-index: 20;
+}
+.site-header .grouped-navigation {
+  gap: clamp(14px, 1.6vw, 24px);
+}
+.nav-group-trigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 48px;
+  padding: 8px 0;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  background: transparent;
+  color: var(--ink);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+}
+.nav-group-trigger:is(:hover, [aria-expanded='true'], [data-active='true']) {
+  color: var(--signal);
+  border-bottom-color: var(--signal);
+}
+.nav-group-trigger svg,
+.mobile-nav-group > button svg {
+  transition: transform 160ms ease;
+}
+:is(.nav-group-trigger, .mobile-nav-group > button)[aria-expanded='true'] svg {
+  transform: rotate(180deg);
+}
+.nav-popover {
+  position: absolute;
+  top: calc(100% - 5px);
+  right: 64px;
+  width: min(720px, calc(100% - 128px));
+  max-height: calc(100dvh - 185px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 28px;
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--signal);
+  background: #fffaf3;
+  box-shadow: 0 22px 50px #24211f24;
+}
+.nav-popover[hidden],
+.mobile-subpages[hidden] {
+  display: none;
+}
+.nav-popover-intro {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  padding-bottom: 22px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+.nav-popover-intro p {
+  max-width: 26ch;
+  font-family: 'Bodoni Moda', Georgia, serif;
+  font-size: 25px;
+  font-style: italic;
+  line-height: 1.3;
+  letter-spacing: -0.025em;
+}
+.site-header .nav-popover a {
+  min-width: 0;
+  white-space: normal;
+  line-height: 1.4;
+}
+.site-header .nav-popover a::after {
+  content: none;
+}
+.site-header .nav-popover-intro a {
+  flex-shrink: 0;
+  max-width: 210px;
+  font-size: 14px;
+  color: var(--signal);
+  gap: 12px;
+}
+.nav-subpages {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 4px 14px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.site-header .nav-subpages a {
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+  height: 100%;
+  padding: 16px 12px;
+}
+.nav-subpages a > span {
+  display: grid;
+  gap: 7px;
+}
+.nav-subpages strong {
+  font-size: 16px;
+  font-weight: 600;
+}
+.nav-subpages a > span > span {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--copy-color);
+  letter-spacing: -0.01em;
+}
+.nav-subpages a > svg {
+  margin-top: 3px;
+  color: var(--signal);
+}
+.nav-subpages a:is(:hover, :focus-visible, [aria-current='page']) {
+  background: var(--copy-surface);
+}
+.nav-popover-insights .nav-subpages,
+.nav-popover-locations .nav-subpages {
+  grid-template-columns: 1fr;
+}
+.nav-related {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px 24px;
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+}
+.site-header .nav-related a {
+  min-height: 44px;
+  gap: 9px;
+  font-size: 14px;
+}
+.nav-popover-industries .nav-related a {
+  color: var(--signal);
+}
+.mobile-nav-group {
+  border-bottom: 1px solid var(--border);
+}
+.mobile-nav-group > button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+  min-height: 60px;
+  padding: 16px 0;
+  border: 0;
+  background: transparent;
+  text-align: left;
+  font-size: 23px;
+  font-weight: 550;
+  line-height: 1.25;
+  letter-spacing: -0.035em;
+}
+.mobile-nav-group > button:is([aria-expanded='true'], [data-active='true']) {
+  color: var(--signal);
+}
+.mobile-subpages {
+  list-style: none;
+  padding: 0 0 14px 15px;
+  margin: 0 0 14px;
+  border-left: 2px solid var(--signal);
+}
+.mobile-panel .mobile-subpages a {
+  min-height: 48px;
+  padding: 12px 0;
+  border: 0;
+  gap: 14px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.015em;
+}
+.mobile-panel .mobile-subpages a svg {
+  width: 16px;
+  height: 16px;
+}
+.mobile-subpages li:first-child a {
+  font-weight: 650;
+}
+@media (max-width: 1199px) {
+  .site-header .grouped-navigation {
+    display: none;
+  }
+  .header-actions .mobile-menu-button {
+    display: inline-flex !important;
+    width: 44px !important;
+    height: 44px !important;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .nav-group-trigger svg,
+  .mobile-nav-group > button svg {
+    transition: none;
+  }
+}

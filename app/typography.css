@@ -1,0 +1,369 @@
+/* Readable roles for supporting copy, independent of the layout breakpoints. */
+:root {
+  --type-label: 0.75rem;
+  --type-caption: 0.875rem;
+}
+.site-header .brand small,
+.site-footer .brand small {
+  font-size: 10px;
+  line-height: 1.5;
+  letter-spacing: 0.045em;
+}
+.site-footer .footer-column h3,
+main .service-image-index {
+  font-size: var(--type-label);
+}
+
+main :is(.wrap, .section, .cta-section, .article-body, .contact-form) .eyebrow,
+main .location-context > .eyebrow {
+  font-size: var(--type-label);
+  font-weight: 600;
+  letter-spacing: 0.075em;
+  line-height: 1.6;
+}
+main .eyebrow-line {
+  flex: 0 0 20px;
+}
+main .editorial-intro .editorial-small-label {
+  display: block;
+  font-size: var(--type-label);
+  line-height: 1.6;
+  letter-spacing: 0.065em;
+}
+main .editorial-hero-top > span:last-child,
+main .industry-panel-icon > span,
+main .blueprint-top,
+main .blueprint-label,
+main .blueprint-bottom {
+  font-size: var(--type-label);
+  line-height: 1.6;
+  letter-spacing: 0.045em;
+}
+main .strip-end {
+  font-size: var(--type-caption);
+  line-height: 1.5;
+}
+main
+  :is(.wrap, .section, .cta-section, .contact-form, .article-body)
+  :is(.button, .text-link, .card-link) {
+  font-size: var(--type-caption);
+  font-weight: 600;
+  line-height: 1.5;
+  min-height: 44px;
+  max-width: 100%;
+}
+main :is(.wrap, .section, .cta-section, .contact-form, .article-body) .button {
+  min-height: 52px;
+  white-space: normal;
+  gap: 16px;
+}
+main
+  :is(.wrap, .section, .cta-section, .contact-form, .article-body)
+  .text-link {
+  gap: 12px;
+}
+main .section-bottom-link {
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px 28px;
+}
+main .section-bottom-link > span {
+  max-width: 36ch;
+  font-family: 'Bodoni Moda', Georgia, serif;
+  font-style: italic;
+  font-size: 23px;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+main .editorial-photo-caption small,
+main .photo-index,
+main .image-caption {
+  font-size: var(--type-label);
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.045em;
+}
+main .image-caption {
+  right: 24px;
+  left: 24px;
+  bottom: 22px;
+}
+main .healthcare-specialties {
+  flex-wrap: wrap;
+  font-size: var(--type-label);
+  line-height: 1.6;
+  gap: 8px 12px;
+  color: #e0d6c9;
+  letter-spacing: 0.04em;
+}
+main .local-strip {
+  flex-wrap: wrap;
+  gap: 18px 28px;
+}
+main .strip-label {
+  font-size: var(--type-label);
+  line-height: 1.6;
+  letter-spacing: 0.035em;
+}
+main .strip-label strong {
+  font-weight: 600;
+}
+main .location-stack-note,
+main .hero-small-note {
+  display: block;
+  font-size: var(--type-caption);
+  line-height: 1.65;
+  letter-spacing: 0.015em;
+}
+main .location-stack div > span,
+main .location-type-panel > span {
+  font-size: 16px;
+  line-height: 1.5;
+}
+main .location-type-panel small,
+main .location-card > div > span,
+main .about-brand-panel small,
+main .industry-detail-card .service-top > span {
+  font-size: var(--type-label);
+  line-height: 1.6;
+  letter-spacing: 0.05em;
+}
+main .article-art .article-art-label {
+  /* Earlier artwork styles use !important for the decorative caption. */
+  font-size: var(--type-label) !important;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.035em;
+  right: 22px;
+}
+main .article-meta {
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  font-size: var(--type-caption);
+  line-height: 1.5;
+}
+main .article-meta > span:first-child {
+  padding: 5px 10px;
+  border: 1px solid var(--border);
+  background: var(--copy-surface);
+  font-weight: 500;
+}
+main .article-byline {
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  font-size: var(--type-caption);
+  line-height: 1.5;
+}
+main .article-layout aside nav a {
+  min-height: 44px;
+  font-size: var(--type-caption);
+  line-height: 1.5;
+}
+main .breadcrumb {
+  font-size: var(--type-caption);
+  line-height: 1.5;
+  gap: 8px 12px;
+}
+main .breadcrumb > span {
+  flex-wrap: wrap;
+  gap: 8px 12px;
+}
+main .breadcrumb a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+main .tag-list {
+  flex-wrap: wrap;
+  gap: 8px;
+}
+main .tag-list span,
+main .service-image-rows .tag-list span {
+  padding: 5px 10px;
+  font-size: var(--type-caption);
+  line-height: 1.5;
+  letter-spacing: -0.015em;
+  border: 1px solid var(--border);
+  background: var(--copy-surface);
+}
+main .tag-list span::after {
+  content: none;
+}
+main .industry-tabs button,
+main .filter-buttons button {
+  min-height: 48px;
+  font-size: var(--type-caption);
+}
+main .insight-filter > p,
+main .approach-number > span,
+main .approach-checks > span {
+  font-size: 16px;
+  line-height: 1.6;
+}
+main :is(.wrap, .section, .contact-copy) .check-list li,
+main :is(.wrap, .section) .simple-checks li {
+  font-size: 16px;
+  line-height: 1.6;
+  align-items: flex-start;
+}
+main .check-list li > span {
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+main .care-fit-section .two-column > div > p,
+main .contact-form .form-intro,
+main .contact-form .field-help,
+main .contact-form .form-error,
+main .policy-summary .policy-draft,
+main .about-statement .copy-note {
+  font-size: 16px;
+  line-height: 1.7;
+}
+main .two-column .small-note {
+  padding: 16px 18px;
+  border-left: 2px solid var(--signal);
+  background: var(--copy-surface);
+  font-size: var(--type-caption) !important;
+  line-height: 1.7;
+}
+main .contact-form .form-fields :is(label, legend),
+main .contact-form .optional {
+  font-size: var(--type-caption);
+  line-height: 1.5;
+}
+main .contact-form :is(input, textarea, select) {
+  font-size: 16px;
+}
+main .contact-form .form-fields :is(input, textarea)::placeholder {
+  font-size: 16px;
+}
+main .brief-ready > p,
+main .brief-summary p {
+  font-size: 16px;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+main .brief-summary > div > span {
+  font-size: var(--type-label);
+  font-weight: 600;
+  line-height: 1.6;
+  letter-spacing: 0.05em;
+}
+main .brief-summary strong {
+  font-size: 17px;
+  line-height: 1.5;
+}
+main .brief-ready .download-feedback {
+  font-size: var(--type-caption) !important;
+  line-height: 1.7;
+}
+main .form-navigation,
+main .brief-actions {
+  flex-wrap: wrap;
+  gap: 12px;
+}
+main .brief-actions button,
+main .form-navigation > button:not(.button) {
+  font-size: var(--type-caption);
+  min-height: 44px;
+}
+main .form-progress {
+  gap: 12px;
+}
+main .form-progress > span:not(.progress-line) {
+  font-size: var(--type-caption);
+  line-height: 1.4;
+  min-width: 0;
+  white-space: normal;
+}
+main .form-progress i {
+  flex-shrink: 0;
+  font-size: var(--type-label);
+}
+main .contact-form .form-privacy {
+  font-size: var(--type-caption) !important;
+  line-height: 1.7;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+main .contact-region > span,
+main .policy-updated {
+  font-size: var(--type-caption);
+  line-height: 1.6;
+}
+main .contact-region small {
+  font-size: var(--type-label);
+  line-height: 1.6;
+  letter-spacing: 0.045em;
+}
+main .location-detail-hero > div > p {
+  max-width: 54ch;
+  margin-top: 28px;
+  padding-left: 20px;
+  border-left: 2px solid var(--signal);
+  font-size: var(--copy-lead-size);
+  line-height: 1.6;
+  color: var(--copy-color);
+}
+main .contact-layout > *,
+main .location-detail-hero > div {
+  min-width: 0;
+}
+@media (max-width: 600px) {
+  .site-header .brand small {
+    display: none;
+  }
+  main .section-heading > .text-link {
+    margin-top: 14px;
+  }
+  main .local-strip .strip-label {
+    width: 100%;
+    text-align: center;
+  }
+  main .local-strip > a {
+    font-size: 24px;
+  }
+  main .section-bottom-link {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  main .section-bottom-link > span {
+    max-width: 27ch;
+  }
+  main .article-meta {
+    gap: 8px 12px;
+  }
+  main .form-progress > span:not(.progress-line) {
+    flex: 1;
+    align-items: flex-start;
+  }
+  main .form-progress {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 16px minmax(0, 1fr);
+  }
+  main .form-progress .progress-line {
+    flex: 0 0 16px;
+    width: 16px;
+  }
+  main .location-type-panel > strong {
+    font-size: clamp(36px, 10vw, 48px);
+    gap: 12px;
+  }
+  main .location-type-panel > strong > span {
+    font-size: 0.75em;
+  }
+}
+@media (max-width: 380px) {
+  main .form-navigation > .button {
+    width: 100%;
+  }
+  main .local-strip {
+    column-gap: 14px;
+  }
+  main .process-grid {
+    grid-template-columns: 1fr;
+  }
+}

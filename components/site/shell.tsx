@@ -13,6 +13,10 @@ import {
 } from '@/components/ui/sheet';
 import { services, locations } from '@/lib/content';
 import { policyLinks } from '@/lib/policies';
+import {
+  DesktopNavigation,
+  MobileNavigation,
+} from '@/components/site/navigation';
 
 export function Brand({ large = false }: { large?: boolean }) {
   return (
@@ -31,25 +35,9 @@ export function Brand({ large = false }: { large?: boolean }) {
     </Link>
   );
 }
-const links = [
-  ['Services', '/services'],
-  ['Healthcare', '/healthcare'],
-  ['Our approach', '/approach'],
-  ['About us', '/about'],
-  ['Insights', '/insights'],
-];
-const mobileLinks = [
-  ['Home', '/'],
-  ...links,
-  ['Industries', '/industries'],
-  ['Our locations', '/locations'],
-  ['Let’s talk growth', '/contact'],
-];
 export function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
-  const isCurrent = (url: string) =>
-    pathname === url || (url !== '/' && pathname.startsWith(url + '/'));
   return (
     <>
       <a className="skip-link" href="#main">
@@ -65,18 +53,7 @@ export function Header() {
       </div>
       <header className="site-header wrap">
         <Brand />
-        <nav className="desktop-nav" aria-label="Main navigation">
-          {links.map(([label, url]) => (
-            <Link
-              href={url}
-              key={url}
-              aria-current={isCurrent(url) ? 'page' : undefined}
-            >
-              {label}
-              {label === 'Healthcare' && <span className="tiny-dot" />}
-            </Link>
-          ))}
-        </nav>
+        <DesktopNavigation key={pathname} pathname={pathname} />
         <div className="header-actions">
           <Link href="/contact" className="button button-dark nav-cta">
             <span className="nav-cta-full">Let’s talk growth</span>
@@ -101,19 +78,10 @@ export function Header() {
               <SheetDescription>
                 Timemac Digital · Udupi, Manipal & Mangalore
               </SheetDescription>
-              <nav aria-label="Mobile navigation">
-                {mobileLinks.map(([label, url]) => (
-                  <Link
-                    onClick={() => setOpen(false)}
-                    href={url}
-                    key={url}
-                    aria-current={isCurrent(url) ? 'page' : undefined}
-                  >
-                    {label}
-                    <ArrowUpRight size={19} />
-                  </Link>
-                ))}
-              </nav>
+              <MobileNavigation
+                pathname={pathname}
+                onNavigate={() => setOpen(false)}
+              />
               <p className="mobile-signoff">
                 Local roots.
                 <br />

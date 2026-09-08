@@ -247,14 +247,21 @@ main .editorial-intro > .hero-audience {
   color: var(--copy-color);
 }
 
-.editorial-intro .button {
+.editorial-hero-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
   margin-top: 20px;
+}
+
+.editorial-hero-actions > :is(.button, .text-link) {
+  margin: 0;
+  max-width: 100%;
 }
 
 .editorial-intro .text-link {
   min-height: 44px;
-  margin-top: 5px;
-  margin-left: 0;
   font-size: 13px;
 }
 
@@ -359,6 +366,11 @@ main .editorial-intro > .hero-audience {
   .editorial-intro .button {
     font-size: 13px;
     min-height: 52px;
+  }
+
+  .editorial-hero-actions > .button {
+    width: 100%;
+    justify-content: space-between;
   }
 
   .editorial-photo {

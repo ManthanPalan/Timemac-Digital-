@@ -92,12 +92,14 @@ export default function Home() {
                   </li>
                 ))}
               </ul>
-              <Link href="/contact" className="button button-accent">
-                Make your next move <ArrowUpRight size={19} />
-              </Link>
-              <Link href="/services" className="text-link">
-                Explore our services <ArrowRight size={17} />
-              </Link>
+              <div className="editorial-hero-actions">
+                <Link href="/contact" className="button button-accent">
+                  Make your next move <ArrowUpRight size={19} />
+                </Link>
+                <Link href="/services" className="text-link">
+                  Explore our services <ArrowRight size={17} />
+                </Link>
+              </div>
             </div>
             <Link href="/healthcare" className="editorial-photo">
               <Image

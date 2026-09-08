@@ -240,13 +240,9 @@ p {
   margin-top: 19px;
   max-width: 350px;
 }
-.editorial-intro .button {
-  margin-top: 27px;
-}
 .editorial-intro .text-link {
   display: flex;
   width: max-content;
-  margin-top: 12px;
   font-size: 11px;
 }
 .editorial-photo {
@@ -568,15 +564,11 @@ p {
   .editorial-intro .button {
     font-size: 12px;
     min-height: 49px;
-    margin-top: 21px;
     padding-inline: 19px;
     gap: 28px;
   }
   .editorial-intro .text-link {
-    display: inline-flex;
     font-size: 10px;
-    margin-left: 18px;
-    margin-top: 14px;
     gap: 8px;
   }
   .editorial-photo {
@@ -638,11 +630,6 @@ p {
   }
 }
 @media (max-width: 380px) {
-  .editorial-intro .text-link {
-    display: flex;
-    margin-left: 0;
-    margin-top: 10px;
-  }
   .brand > span:not(.brand-symbol) {
     font-size: 24px;
   }
