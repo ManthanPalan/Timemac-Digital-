@@ -30,3 +30,5 @@ Business email and phone are intentionally unset, as requested. The contact form
 ## Brand assets
 
 The healthcare photograph and social preview are original generated assets. They do not depict a named client or member of staff. The brand uses an editorial identity: Archivo sans-serif, Bodoni Moda italic, warm paper, ink and vermilion. The favicon uses the typographic “t.” mark. Font licenses are included in `public/fonts`. There are no invented client logos, testimonials or outcome statistics.
+
+Service imagery is supplied by the site owner and mapped in `lib/service-media.ts`. Photography fills its frame; logos and illustrations retain their full composition. Hosting sits within Web Design & Development. The upload `Seo-CrwgpcDN.avif` depicts the Chrome logo and is not used to represent SEO or Google Ads. The Google Ads mark comes from [Google's product branding asset](https://www.gstatic.com/images/branding/productlogos/ads/v5/192px.svg), linked from [Google Ads](https://business.google.com/us/google-ads/), and is stored locally as a PNG.

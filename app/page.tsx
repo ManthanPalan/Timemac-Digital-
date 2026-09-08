@@ -37,11 +37,15 @@ export default function Home() {
             <div className="hero-margin-note">
               <span>LOCAL ROOTS.</span>
               <p>
-                For the ambitious.
-                <br />
-                For the independent.
-                <br />
-                For what’s next.
+                <span>
+                  For the <strong>ambitious.</strong>
+                </span>
+                <span>
+                  For the <strong>independent.</strong>
+                </span>
+                <span>
+                  For <strong>what’s next.</strong>
+                </span>
               </p>
               <ArrowUpRight strokeWidth={1} />
             </div>

@@ -3,6 +3,7 @@ import { siteOrigin } from '@/lib/site';
 import './globals.css';
 import './editorial.css';
 import './content.css';
+import './services.css';
 import { Header, Footer } from '@/components/site/shell';
 
 export const metadata: Metadata = {

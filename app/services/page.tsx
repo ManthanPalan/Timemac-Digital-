@@ -2,7 +2,14 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowUpRight, Check } from 'lucide-react';
 import { services } from '@/lib/content';
-import { PageHero, CTA, Eyebrow, icons } from '@/components/site/shared';
+import {
+  PageHero,
+  CTA,
+  Eyebrow,
+  icons,
+  ServiceArtwork,
+} from '@/components/site/shared';
+import { getServiceImage } from '@/lib/service-media';
 import { FAQ } from '@/components/site/interactive';
 export const metadata: Metadata = {
   title: 'Digital marketing services',
@@ -18,9 +25,10 @@ export default function Services() {
         accent="Together."
         description="Six connected capabilities. One clear goal: help the right people discover your business, get in touch and keep coming back."
       />
-      <section className="wrap service-rows">
+      <section className="wrap service-rows service-image-rows">
         {services.map((s, i) => {
           const Icon = icons[s.icon];
+          const asset = getServiceImage(s.slug);
           return (
             <Link
               href={'/services/' + s.slug}
@@ -28,10 +36,14 @@ export default function Services() {
               key={s.slug}
             >
               <span className="row-number">0{i + 1}</span>
-              <div className="row-icon">
-                <Icon strokeWidth={1.4} />
+              <div className="service-row-media">
+                {asset ? (
+                  <ServiceArtwork asset={asset} decorative />
+                ) : (
+                  <Icon strokeWidth={1.2} aria-hidden="true" />
+                )}
               </div>
-              <div>
+              <div className="service-row-copy">
                 <h2>{s.title}</h2>
                 <p>{s.summary}</p>
                 <div className="tag-list">

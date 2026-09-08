@@ -3,12 +3,15 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { ArrowUpRight, ArrowDown, Check, Target, Search } from 'lucide-react';
 import { services } from '@/lib/content';
+import { getServiceImage, hostingImage, mapsImage } from '@/lib/service-media';
+import { siteOrigin } from '@/lib/site';
 import {
   Breadcrumb,
   Eyebrow,
   CTA,
   ServiceGrid,
   icons,
+  ServiceArtwork,
 } from '@/components/site/shared';
 type Props = { params: Promise<{ slug: string }> };
 export function generateStaticParams() {
@@ -18,19 +21,30 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const s = services.find((x) => x.slug === slug);
   if (!s) return {};
+  const asset = getServiceImage(s.slug, true);
+  const images = asset
+    ? [
+        {
+          url: new URL(asset.src, siteOrigin).href,
+          width: asset.width,
+          height: asset.height,
+          alt: asset.alt,
+        },
+      ]
+    : [];
   return {
     title: s.title,
     description: s.description,
     openGraph: {
       title: s.title + ' | Timemac Digital',
       description: s.description,
-      images: [],
+      images,
     },
     twitter: {
-      card: 'summary',
+      card: asset ? 'summary_large_image' : 'summary',
       title: s.title,
       description: s.description,
-      images: [],
+      images,
     },
   };
 }
@@ -39,6 +53,7 @@ export default async function Service({ params }: Props) {
   const s = services.find((x) => x.slug === slug);
   if (!s) notFound();
   const Icon = icons[s.icon];
+  const asset = getServiceImage(s.slug, true);
   return (
     <main id="main">
       <Breadcrumb
@@ -57,34 +72,86 @@ export default async function Service({ params }: Props) {
             <ArrowUpRight size={18} />
           </Link>
         </div>
-        <div className="service-blueprint">
-          <div className="blueprint-top">
-            <span>THE TIMEMAC APPROACH</span>
-            <Icon size={26} />
-          </div>
-          <span className="blueprint-label">A BETTER JOURNEY, BY DESIGN.</span>
-          <div className="blueprint-stages">
-            <span>
-              <Search size={18} />
-              Get discovered
+        {asset ? (
+          <figure className="service-detail-visual">
+            <ServiceArtwork asset={asset} priority />
+            <figcaption>
+              <Icon size={20} aria-hidden="true" />
+              <span>{s.title}</span>
+              <ArrowUpRight size={21} aria-hidden="true" />
+            </figcaption>
+          </figure>
+        ) : (
+          <div className="service-blueprint">
+            <div className="blueprint-top">
+              <span>THE TIMEMAC APPROACH</span>
+              <Icon size={26} />
+            </div>
+            <span className="blueprint-label">
+              A BETTER JOURNEY, BY DESIGN.
             </span>
-            <ArrowDown />
-            <span>
-              <Target size={18} />
-              Make a connection
-            </span>
-            <ArrowDown />
-            <span className="blueprint-last">
-              <Check size={18} />
-              Give it a next step
-            </span>
+            <div className="blueprint-stages">
+              <span>
+                <Search size={18} />
+                Get discovered
+              </span>
+              <ArrowDown />
+              <span>
+                <Target size={18} />
+                Make a connection
+              </span>
+              <ArrowDown />
+              <span className="blueprint-last">
+                <Check size={18} />
+                Give it a next step
+              </span>
+            </div>
+            <div className="blueprint-bottom">
+              YOUR BUSINESS. CONNECTED.
+              <ArrowUpRight size={20} />
+            </div>
           </div>
-          <div className="blueprint-bottom">
-            YOUR BUSINESS. CONNECTED.
-            <ArrowUpRight size={20} />
-          </div>
-        </div>
+        )}
       </section>
+      {(s.slug === 'web-design' || s.slug === 'seo') && (
+        <section className="wrap service-support-wrap">
+          <div className="service-support">
+            <ServiceArtwork
+              asset={s.slug === 'web-design' ? hostingImage : mapsImage}
+            />
+            <div>
+              <Eyebrow>
+                {s.slug === 'web-design'
+                  ? 'DEVELOPMENT + HOSTING'
+                  : 'SEARCH + LOCAL DISCOVERY'}
+              </Eyebrow>
+              <h2>
+                {s.slug === 'web-design'
+                  ? 'A home for your website, too.'
+                  : 'Be found in your neighbourhood.'}
+              </h2>
+              <p>
+                {s.slug === 'web-design'
+                  ? 'Bring website development and hosting into one conversation. We help you plan the setup, domain connection and handover around your business.'
+                  : 'Connect your website with a clear local presence. Help people find your location, understand your services and take the next step.'}
+              </p>
+            </div>
+            <Link
+              href={
+                s.slug === 'web-design'
+                  ? '/contact?service=web-design'
+                  : '/contact?service=seo'
+              }
+              className="text-link"
+            >
+              {s.slug === 'web-design'
+                ? 'Discuss your website'
+                : 'Plan your local presence'}
+              <ArrowUpRight size={18} />
+            </Link>
+          </div>
+        </section>
+      )}
       <section className="section wrap">
         <div className="section-heading">
           <div>

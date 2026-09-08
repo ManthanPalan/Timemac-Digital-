@@ -55,7 +55,9 @@ export function Header() {
         Skip to content
       </a>
       <div className="announcement">
-        <span>INDEPENDENT THINKING. LOCAL UNDERSTANDING.</span>
+        <span>
+          INDEPENDENT THINKING. <strong>LOCAL UNDERSTANDING.</strong>
+        </span>
         <Link href="/locations">
           Udupi · Manipal · Mangalore <ArrowUpRight size={12} />
         </Link>

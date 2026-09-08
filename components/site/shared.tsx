@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import {
   ArrowUpRight,
   ArrowRight,
@@ -13,6 +14,7 @@ import {
   HeartPulse,
 } from 'lucide-react';
 import { services, articles, locations } from '@/lib/content';
+import { getServiceImage, type ServiceImage } from '@/lib/service-media';
 
 export const icons = {
   search: Search,
@@ -44,29 +46,66 @@ export function CopyBlock({
     </div>
   );
 }
+export function ServiceArtwork({
+  asset,
+  decorative = false,
+  priority = false,
+}: {
+  asset: ServiceImage;
+  decorative?: boolean;
+  priority?: boolean;
+}) {
+  return (
+    <span className={'service-artwork service-artwork-' + asset.treatment}>
+      <Image
+        unoptimized
+        src={asset.src}
+        alt={decorative ? '' : asset.alt}
+        width={asset.width}
+        height={asset.height}
+        loading={priority ? 'eager' : 'lazy'}
+        fetchPriority={priority ? 'high' : undefined}
+      />
+    </span>
+  );
+}
 export function ServiceGrid({ slugs }: { slugs?: readonly string[] }) {
   const list = slugs
     ? services.filter((s) => slugs.includes(s.slug))
     : services;
   return (
-    <div className="service-grid">
+    <div className="service-grid service-image-grid">
       {list.map((s, i) => {
         const Icon = icons[s.icon];
+        const asset = getServiceImage(s.slug);
         return (
           <Link
             className="service-card"
             href={'/services/' + s.slug}
             key={s.slug}
           >
-            <div className="service-top">
-              <Icon />
-              <span>0{i + 1}</span>
+            <div className="service-card-media">
+              {asset ? (
+                <ServiceArtwork asset={asset} decorative />
+              ) : (
+                <span className="service-strategy-art" aria-hidden="true">
+                  <Icon strokeWidth={1} />
+                  <span>
+                    A clearer
+                    <br />
+                    <em>way forward.</em>
+                  </span>
+                </span>
+              )}
+              <span className="service-image-index">0{i + 1}</span>
             </div>
-            <h3>{s.short}</h3>
-            <p>{s.summary}</p>
-            <span className="card-link">
-              Explore service <ArrowUpRight size={20} />
-            </span>
+            <div className="service-card-copy">
+              <h3>{s.short}</h3>
+              <p>{s.summary}</p>
+              <span className="card-link">
+                Explore service <ArrowUpRight size={20} />
+              </span>
+            </div>
           </Link>
         );
       })}

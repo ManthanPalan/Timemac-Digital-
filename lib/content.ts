@@ -120,7 +120,12 @@ export const services = [
     description:
       'Thoughtful React websites that make your offer clear and your next step easy. Built to feel good on a phone, communicate with confidence and support your marketing.',
     summary: 'Give your business a digital home that earns its keep.',
-    tags: ['React development', 'UX & UI design', 'Landing pages'],
+    tags: [
+      'React development',
+      'UX & UI design',
+      'Landing pages',
+      'Hosting setup',
+    ],
     deliverables: [
       [
         'Clarity from the first screen',
