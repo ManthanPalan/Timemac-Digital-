@@ -5,6 +5,7 @@ import './editorial.css';
 import './content.css';
 import './services.css';
 import './sections.css';
+import './policies.css';
 import { Header, Footer } from '@/components/site/shell';
 
 export const metadata: Metadata = {

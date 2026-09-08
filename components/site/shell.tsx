@@ -12,6 +12,7 @@ import {
   SheetDescription,
 } from '@/components/ui/sheet';
 import { services, locations } from '@/lib/content';
+import { policyLinks } from '@/lib/policies';
 
 export function Brand({ large = false }: { large?: boolean }) {
   return (
@@ -187,12 +188,18 @@ export function Footer() {
             <ArrowUpRight />
           </span>
         </div>
+        <nav className="footer-policies" aria-label="Policies and pricing">
+          {policyLinks.map((link) => (
+            <Link key={link.href} href={link.href}>
+              {link.label}
+            </Link>
+          ))}
+          <Link href="/contact#business-details">Contact & support</Link>
+        </nav>
         <div className="footer-bottom">
           <span>© {new Date().getFullYear()} Timemac Digital.</span>
           <span>Made for the coast. Built for what’s next.</span>
           <div>
-            <Link href="/privacy">Privacy</Link>
-            <Link href="/terms">Terms</Link>
             <a href="#main" aria-label="Back to top">
               <ArrowRight className="back-top" size={16} />
             </a>

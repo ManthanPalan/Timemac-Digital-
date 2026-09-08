@@ -1,6 +1,7 @@
 import type { MetadataRoute } from 'next';
 import { services, industries, locations, articles } from '@/lib/content';
 import { siteOrigin } from '@/lib/site';
+import { policyLinks } from '@/lib/policies';
 export default function sitemap(): MetadataRoute.Sitemap {
   const routes = [
     '',
@@ -12,8 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/approach',
     '/insights',
     '/contact',
-    '/privacy',
-    '/terms',
+    ...policyLinks.map((link) => link.href),
     ...services.map((x) => '/services/' + x.slug),
     ...industries.map((x) => '/industries/' + x.slug),
     ...locations.map((x) => '/locations/' + x.slug),

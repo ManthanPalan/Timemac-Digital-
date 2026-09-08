@@ -38,7 +38,19 @@ Content lives in `lib/content.ts`; reusable UI lives in `components/site`. The s
 
 ## Contact details
 
-Business email and phone are intentionally unset, as requested. The contact form builds a downloadable text brief in the visitor’s browser. It does **not** submit an enquiry, store personal data or make a booking. Add the real business contact details and an approved delivery integration before enabling enquiry submission. Update the privacy page when delivery or analytics are added.
+Public business identity and support details are configured in `lib/business.ts`. The legal business name, full postal address, support email and phone are awaiting the owner's verified details; no contact information has been invented. These values populate the contact page and policy contact blocks.
+
+The contact form builds a downloadable text brief in the visitor’s browser, including the visitor's phone number. It does **not** submit an enquiry, make a booking or process a payment. Add an approved delivery integration before enabling enquiry submission, and update the privacy notice if that behaviour changes.
+
+## Payment policy pages
+
+The footer and sitemap include `/terms`, `/privacy`, `/refunds`, `/shipping` and `/pricing`. They cover project scope and quote-based pricing, international payment currencies and bank charges, conditional use of Razorpay, data handling, digital delivery and refunds. No Razorpay checkout, API integration, recurring billing or payment collection has been enabled by these changes.
+
+These are drafts for business and legal review. The draft notice remains visible until all fields in `lib/business.ts` are filled. Confirm the actual refund terms before publishing: the proposed policy refunds unstarted/unused work after completed work and previously approved non-recoverable third-party costs, reviews a complete request within 5 business days, and initiates an approved refund within 5 business days. Provider/bank credit time is a separate estimate. Confirm the privacy statements against actual operations and any external tools used.
+
+Before submitting the public production URL to Razorpay, publish the verified merchant identity and support contacts, accept or revise the proposed commercial terms, and check that all policy pages are accessible without sign-in. The pricing page describes custom proposals; it does not invent fixed service rates. If Razorpay requests published prices, supply approved rates for real offerings. International-payment activation, KYC and any requested business/export documentation must be completed separately in Razorpay; policy pages do not guarantee approval.
+
+Sources reviewed on 9 September 2026: [Razorpay website requirements](https://razorpay.com/docs/payments/dashboard/account-settings/business-website-details/), [international payments for Indian businesses](https://razorpay.com/docs/payments/international-payments/?preferred-country=IN), [normal refunds](https://razorpay.com/docs/payments/refunds/normal/), [Razorpay Privacy Policy](https://razorpay.com/privacy-policy/) and [Vercel Privacy Notice](https://vercel.com/legal/privacy-notice).
 
 ## Brand assets
 

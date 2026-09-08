@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { ArrowUpRight, MapPin } from 'lucide-react';
 import { Eyebrow, CheckList } from '@/components/site/shared';
 import { ContactForm } from '@/components/site/contact-form';
+import { BusinessContact } from '@/components/site/policy-layout';
 export const metadata: Metadata = {
   title: 'Let’s talk growth',
   description:
@@ -36,12 +37,9 @@ export default async function Contact({
               'No pressure. No commitments.',
             ]}
           />
-          <div className="contact-availability">
-            <span className="eyebrow">LET’S GET THE CONVERSATION READY</span>
-            <p>
-              Direct contact details are coming soon. For now, prepare and
-              download your brief so everything is ready when you reach out.
-            </p>
+          <div className="contact-availability" id="business-details">
+            <span className="policy-label">BUSINESS CONTACT & SUPPORT</span>
+            <BusinessContact />
           </div>
           <div className="contact-region">
             <MapPin size={17} />
