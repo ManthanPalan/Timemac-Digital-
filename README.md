@@ -4,6 +4,8 @@ A complete React website for a healthcare-first digital marketing studio serving
 
 ## Run locally
 
+Use Node.js 22.
+
 ```sh
 npm install
 npm run dev
@@ -12,12 +14,21 @@ npm run dev
 ## Production checks
 
 ```sh
-npx tsc --noEmit
-npm run lint
 npm run build
+npm run lint
+npx tsc --noEmit
 ```
 
-The project uses React 19, TypeScript, Vinext/Vite, shadcn components and Lucide icons. Fonts and imagery are served locally. The production output is a Cloudflare-compatible worker in `dist/server` with static assets in `dist/client`.
+The project uses Next.js 16, React 19, TypeScript, Tailwind CSS 4, shadcn components and Lucide icons. Fonts and imagery are served locally. Run `npm start` after building to preview the production site.
+
+## Deploy to Vercel
+
+1. Push this project to your Git repository and import it into Vercel.
+2. Select the **Next.js** framework preset. The root directory must contain this `package.json` (use `Timemac-Digital-` only if you import its parent folder).
+3. Use Node.js **22.x**, the build command **`npm run build`**, and the default Next.js output settings. No custom output directory or worker configuration is needed.
+4. Deploy. Vercel supplies the production domain used by the sitemap and social previews automatically. If you need a specific canonical domain, set **`SITE_URL`** to its full HTTPS URL before deploying; see `.env.example`.
+
+Keep Vercel's **Automatically expose System Environment Variables** setting enabled when relying on the automatic domain. See [Next.js deployment on Vercel](https://vercel.com/docs/frameworks/full-stack/nextjs) and [Vercel system environment variables](https://vercel.com/docs/environment-variables/system-environment-variables).
 
 ## Content and pages
 
