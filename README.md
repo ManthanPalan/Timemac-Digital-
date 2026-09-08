@@ -25,10 +25,12 @@ The project uses Next.js 16, React 19, TypeScript, Tailwind CSS 4, shadcn compon
 
 1. Push this project to your Git repository and import it into Vercel.
 2. Select the **Next.js** framework preset. The root directory must contain this `package.json` (use `Timemac-Digital-` only if you import its parent folder).
-3. Use Node.js **22.x**, the build command **`npm run build`**, and the default Next.js output settings. No custom output directory or worker configuration is needed.
+3. Use Node.js **22.x**. The checked-in `vercel.json` selects the **Next.js** framework, **`npm run build`** command, and **`.next`** output directory, overriding any previous `dist` setting in the dashboard.
 4. Deploy. Vercel supplies the production domain used by the sitemap and social previews automatically. If you need a specific canonical domain, set **`SITE_URL`** to its full HTTPS URL before deploying; see `.env.example`.
 
 Keep Vercel's **Automatically expose System Environment Variables** setting enabled when relying on the automatic domain. See [Next.js deployment on Vercel](https://vercel.com/docs/frameworks/full-stack/nextjs) and [Vercel system environment variables](https://vercel.com/docs/environment-variables/system-environment-variables).
+
+If a deployment reports `No Output Directory named "dist" found`, deploy a new commit that includes `vercel.json`. Redeploying an older commit will reuse its configuration. Vercel documents these overrides under [framework](https://vercel.com/docs/project-configuration/vercel-json#framework) and [outputDirectory](https://vercel.com/docs/project-configuration/vercel-json#outputdirectory).
 
 ## Content and pages
 
