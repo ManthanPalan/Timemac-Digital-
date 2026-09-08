@@ -30,6 +30,20 @@ export function Eyebrow({ children }: { children: React.ReactNode }) {
     </span>
   );
 }
+export function CopyBlock({
+  lead,
+  children,
+}: {
+  lead: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <div className="copy-block">
+      <p className="copy-lead">{lead}</p>
+      <p className="copy-detail">{children}</p>
+    </div>
+  );
+}
 export function ServiceGrid({ slugs }: { slugs?: readonly string[] }) {
   const list = slugs
     ? services.filter((s) => slugs.includes(s.slug))

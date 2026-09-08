@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { siteOrigin } from '@/lib/site';
 import './globals.css';
 import './editorial.css';
+import './content.css';
 import { Header, Footer } from '@/components/site/shell';
 
 export const metadata: Metadata = {

@@ -8,7 +8,13 @@ import {
   ClipboardCheck,
   MessagesSquare,
 } from 'lucide-react';
-import { Eyebrow, CheckList, ServiceGrid, CTA } from '@/components/site/shared';
+import {
+  Eyebrow,
+  CheckList,
+  ServiceGrid,
+  CTA,
+  CopyBlock,
+} from '@/components/site/shared';
 import { FAQ } from '@/components/site/interactive';
 export const metadata: Metadata = {
   title: 'Healthcare marketing in Udupi, Manipal & Mangalore',
@@ -28,11 +34,10 @@ export default function Healthcare() {
             <br />
             <span className="muted-text">A better connection.</span>
           </h1>
-          <p>
-            You focus on delivering good care. We help people discover your
-            practice, understand your services and find a clear path to an
-            appointment enquiry.
-          </p>
+          <CopyBlock lead="You focus on delivering good care.">
+            We help people discover your practice, understand your services and
+            find a clear path to an appointment enquiry.
+          </CopyBlock>
           <Link
             className="button button-dark"
             href="/contact?industry=healthcare"

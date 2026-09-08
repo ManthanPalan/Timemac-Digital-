@@ -1,6 +1,12 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowUpRight, ArrowRight } from 'lucide-react';
+import {
+  ArrowUpRight,
+  ArrowRight,
+  Search,
+  Sparkles,
+  MousePointer2,
+} from 'lucide-react';
 import {
   ServiceGrid,
   CTA,
@@ -9,6 +15,7 @@ import {
   Process,
   Eyebrow,
   CheckList,
+  CopyBlock,
 } from '@/components/site/shared';
 import { FAQ, IndustrySelector } from '@/components/site/interactive';
 
@@ -44,10 +51,43 @@ export default function Home() {
               <span className="editorial-small-label">
                 GOOD WORK DESERVES TO BE SEEN.
               </span>
-              <p>
-                We help healthcare brands and ambitious local businesses become
-                easier to find, harder to forget, and simpler to choose.
+              <p className="hero-audience">
+                Healthcare brands.
+                <br />
+                <strong>Ambitious local businesses.</strong>
               </p>
+              <ul
+                className="hero-outcomes"
+                aria-label="What we help you achieve"
+              >
+                {[
+                  {
+                    icon: Search,
+                    title: 'Easier to find.',
+                    detail: 'Show up in the right searches.',
+                  },
+                  {
+                    icon: Sparkles,
+                    title: 'Harder to forget.',
+                    detail: 'Make your expertise stand out.',
+                  },
+                  {
+                    icon: MousePointer2,
+                    title: 'Simpler to choose.',
+                    detail: 'Give every enquiry a next step.',
+                  },
+                ].map(({ icon: Icon, title, detail }) => (
+                  <li key={title}>
+                    <span className="outcome-icon">
+                      <Icon size={19} strokeWidth={1.6} aria-hidden="true" />
+                    </span>
+                    <div>
+                      <strong>{title}</strong>
+                      <span>{detail}</span>
+                    </div>
+                  </li>
+                ))}
+              </ul>
               <Link href="/contact" className="button button-accent">
                 Make your next move <ArrowUpRight size={19} />
               </Link>
@@ -87,8 +127,8 @@ export default function Home() {
               </h2>
             </div>
             <p>
-              From that first Google search to your next loyal customer, we
-              connect every part of your digital journey.
+              <strong>From first search to loyal customer.</strong>
+              We connect every part of your digital journey.
             </p>
           </div>
           <ServiceGrid />
@@ -124,11 +164,11 @@ export default function Home() {
                   find you.
                 </span>
               </h2>
-              <p>
-                Choosing care is personal. Your marketing should understand
-                that. We help clinics, hospitals and healthcare professionals
-                build a trusted digital presence that puts people first.
-              </p>
+              <CopyBlock lead="Choosing care is personal.">
+                Your marketing should understand that. We help clinics,
+                hospitals and healthcare professionals build a trusted digital
+                presence that puts people first.
+              </CopyBlock>
               <CheckList
                 items={[
                   'Clear, helpful healthcare content',
@@ -157,8 +197,10 @@ export default function Home() {
               </h2>
             </div>
             <p>
-              A healthcare-first studio, with room for every business ready for
-              its next chapter.
+              <strong>
+                Healthcare is our focus. Ambition is our common ground.
+              </strong>
+              There’s room for every business ready for its next chapter.
             </p>
           </div>
           <IndustrySelector />
@@ -191,11 +233,10 @@ export default function Home() {
               <br />
               <span className="muted-text">So much possibility.</span>
             </h2>
-            <p>
-              Udupi’s community. Manipal’s energy. Mangalore’s ambition. Your
-              location is more than a campaign setting. It is the context that
-              makes your marketing matter.
-            </p>
+            <CopyBlock lead="Local understanding. A real advantage.">
+              Your neighbourhood shapes how people search, connect and choose.
+              We bring that context to every campaign.
+            </CopyBlock>
             <Link href="/locations" className="text-link">
               Meet your local growth partner <ArrowUpRight size={18} />
             </Link>

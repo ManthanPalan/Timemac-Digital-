@@ -57,8 +57,16 @@
   --signal: #c43e25;
   --ink: #24211f;
   --paper: #f3efe7;
+  --copy-color: #57514b;
+  --copy-strong: #24211f;
+  --copy-surface: #ebe5dc;
+  --copy-body-size: clamp(1rem, 0.96rem + 0.18vw, 1.125rem);
+  --copy-lead-size: clamp(1.25rem, 1.05rem + 0.65vw, 1.625rem);
 }
 .dark {
+  --copy-color: #d5ccc0;
+  --copy-strong: #f3efe7;
+  --copy-surface: #332e29;
   --background: #24211f;
   --foreground: #f3efe7;
   --card: #24211f;

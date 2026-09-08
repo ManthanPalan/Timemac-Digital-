@@ -1,0 +1,380 @@
+/* Reading hierarchy: a clear lead, comfortable body copy, quiet context. */
+main p {
+  text-wrap: pretty;
+}
+
+main
+  :is(
+    .service-card,
+    .service-row,
+    .industry-panel,
+    .process-grid,
+    .deliverable-grid,
+    .healthcare-pillars,
+    .industry-detail-card,
+    .industry-needs,
+    .location-card,
+    .values-grid,
+    .approach-steps,
+    .care-type,
+    .about-statement
+  )
+  p,
+main .two-column > div > p,
+main .local-feature > div > p {
+  max-width: 58ch;
+  font-size: var(--copy-body-size);
+  font-weight: 400;
+  line-height: 1.7;
+  letter-spacing: -0.012em;
+  color: var(--copy-color);
+}
+
+main :is(.service-card, .process-grid) p {
+  max-width: 34ch;
+  line-height: 1.65;
+}
+
+main :is(.page-hero, .article-header, .contact-copy, .location-detail-hero) > p,
+main :is(.detail-hero, .healthcare-page-hero) > div > p {
+  max-width: 54ch;
+  font-size: var(--copy-lead-size);
+  line-height: 1.6;
+  letter-spacing: -0.025em;
+  color: var(--copy-color);
+  margin-top: 28px;
+  padding-left: 22px;
+  border-left: 2px solid var(--signal);
+}
+
+main .section-heading > p {
+  flex: 0 1 370px;
+  max-width: 37ch;
+  font-size: var(--copy-body-size);
+  line-height: 1.65;
+  color: var(--copy-color);
+  padding: 4px 0 4px 22px;
+  border-left: 2px solid var(--signal);
+}
+
+main .section-heading > p > strong {
+  display: block;
+  margin-bottom: 9px;
+  color: var(--copy-strong);
+  font-size: 1.13em;
+  font-weight: 550;
+  line-height: 1.4;
+  letter-spacing: -0.025em;
+}
+
+main .copy-block {
+  max-width: 54ch;
+  margin-top: 28px;
+}
+
+main .copy-block .copy-lead {
+  margin: 0;
+  color: var(--copy-strong);
+  font-size: var(--copy-lead-size);
+  font-weight: 550;
+  letter-spacing: -0.035em;
+  line-height: 1.35;
+}
+
+main .copy-block .copy-detail {
+  margin: 12px 0 0;
+  color: var(--copy-color);
+  font-size: var(--copy-body-size);
+  font-weight: 400;
+  line-height: 1.75;
+  letter-spacing: -0.012em;
+}
+
+main .about-statement .copy-block + .copy-block {
+  margin-top: 30px;
+  padding-top: 25px;
+  border-top: 1px solid var(--border);
+}
+
+main .about-statement .copy-note {
+  margin-top: 28px;
+  padding: 20px 22px;
+  background: var(--copy-surface);
+  border-left: 2px solid var(--signal);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+main .copy-note strong {
+  color: var(--copy-strong);
+  font-weight: 600;
+}
+
+.healthcare-feature,
+.healthcare-manifesto,
+.measurement-section,
+.location-2 {
+  --copy-color: #d4cbc0;
+  --copy-strong: #fffaf2;
+}
+
+.location-1 {
+  --copy-color: #ffffff;
+  --copy-strong: #ffffff;
+}
+
+main .measurement-section .two-column > div > p {
+  font-size: var(--copy-body-size);
+  line-height: 1.7;
+}
+
+main .faq-list [data-slot='accordion-content'] p,
+main .contact-availability p,
+main .location-context p {
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--copy-color);
+}
+
+main .cta-inner > div > p {
+  max-width: 45ch;
+  font-size: var(--copy-body-size);
+  line-height: 1.65;
+}
+
+main .healthcare-feature-copy .copy-block {
+  max-width: 45ch;
+}
+
+main .healthcare-feature .check-list li {
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+main .healthcare-manifesto p {
+  max-width: 55ch;
+  font-size: var(--copy-lead-size);
+  line-height: 1.65;
+  color: var(--copy-color);
+}
+
+main .article-body p,
+main .legal-content p {
+  max-width: 65ch;
+  font-size: clamp(1.0625rem, 1rem + 0.2vw, 1.1875rem);
+  color: var(--copy-color);
+  line-height: 1.85;
+}
+
+main .article-endnote p {
+  font-size: var(--copy-lead-size);
+  color: var(--ink);
+  line-height: 1.5;
+}
+
+.editorial-hero-bottom {
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.25fr);
+  gap: clamp(40px, 6vw, 90px);
+  align-items: stretch;
+}
+
+.editorial-intro {
+  max-width: 430px;
+  padding-top: 0;
+}
+
+.editorial-intro .editorial-small-label {
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  font-weight: 500;
+  color: var(--signal);
+}
+
+main .editorial-intro > .hero-audience {
+  max-width: none;
+  margin-top: 15px;
+  font-size: clamp(19px, 1.6vw, 24px);
+  line-height: 1.4;
+  letter-spacing: -0.035em;
+  color: var(--copy-color);
+}
+
+.hero-audience strong {
+  color: var(--ink);
+  font-weight: 550;
+}
+
+.hero-outcomes {
+  list-style: none;
+  margin: 23px 0 0;
+  padding: 0;
+}
+
+.hero-outcomes li {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 0;
+  border-top: 1px solid var(--border);
+}
+
+.outcome-icon {
+  display: grid;
+  place-items: center;
+  flex: 0 0 39px;
+  height: 39px;
+  border: 1px solid #dacec1;
+  border-radius: 50%;
+  color: var(--signal);
+}
+
+.hero-outcomes strong,
+.hero-outcomes div > span {
+  display: block;
+}
+
+.hero-outcomes strong {
+  font-size: 20px;
+  font-weight: 550;
+  letter-spacing: -0.035em;
+  line-height: 1.3;
+}
+
+.hero-outcomes div > span {
+  margin-top: 4px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--copy-color);
+}
+
+.editorial-intro .button {
+  margin-top: 20px;
+}
+
+.editorial-intro .text-link {
+  min-height: 44px;
+  margin-top: 5px;
+  margin-left: 0;
+  font-size: 13px;
+}
+
+.editorial-photo {
+  height: auto;
+  min-height: 440px;
+}
+
+.editorial-photo img {
+  position: absolute;
+  inset: 0;
+}
+
+@media (max-width: 1000px) {
+  .editorial-hero-bottom {
+    gap: 36px;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+
+  main .section-heading > p {
+    flex-basis: 300px;
+  }
+}
+
+@media (max-width: 800px) {
+  .editorial-hero-bottom {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .editorial-intro {
+    max-width: none;
+  }
+
+  .hero-outcomes {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .hero-outcomes li {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .outcome-icon {
+    flex-basis: auto;
+    width: 39px;
+  }
+
+  .editorial-photo {
+    height: 340px;
+    min-height: 0;
+  }
+
+  main .section-heading > p {
+    flex-basis: auto;
+    max-width: 50ch;
+  }
+}
+
+@media (max-width: 600px) {
+  main
+    :is(.page-hero, .article-header, .contact-copy, .location-detail-hero)
+    > p,
+  main :is(.detail-hero, .healthcare-page-hero) > div > p {
+    font-size: 19px;
+    padding-left: 17px;
+    line-height: 1.6;
+    margin-top: 24px;
+  }
+
+  main .section-heading > p {
+    padding-left: 17px;
+    max-width: none;
+  }
+
+  .hero-outcomes {
+    display: block;
+    margin-top: 21px;
+  }
+
+  .hero-outcomes li {
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .outcome-icon {
+    flex: 0 0 39px;
+  }
+
+  .hero-outcomes strong {
+    font-size: 19px;
+  }
+
+  .editorial-intro .editorial-small-label {
+    font-size: 9px;
+  }
+
+  .editorial-intro .button {
+    font-size: 13px;
+    min-height: 52px;
+  }
+
+  .editorial-photo {
+    height: 310px;
+  }
+
+  main .copy-block {
+    margin-top: 24px;
+  }
+
+  main .healthcare-feature .check-list li {
+    font-size: 14px;
+  }
+
+  main .article-body p,
+  main .legal-content p {
+    line-height: 1.75;
+  }
+}

@@ -1,7 +1,13 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowUpRight, Heart, Compass, ScanEye } from 'lucide-react';
-import { PageHero, Eyebrow, CTA, LocalStrip } from '@/components/site/shared';
+import {
+  PageHero,
+  Eyebrow,
+  CTA,
+  LocalStrip,
+  CopyBlock,
+} from '@/components/site/shared';
 export const metadata: Metadata = {
   title: 'About our digital growth studio',
   description:
@@ -37,20 +43,17 @@ export default function About() {
             <br />
             <span className="muted-text">to be seen.</span>
           </h2>
-          <p>
-            There are remarkable businesses in our neighbourhoods. Practices
-            built on care. Services built on craft. Local brands built on years
-            of showing up for their communities.
-          </p>
-          <p>
-            We believe their digital presence should reflect that quality.
-            That’s why we connect thoughtful design, useful content and
-            practical marketing into a clearer path from discovery to a real
-            conversation.
-          </p>
-          <p>
-            Healthcare is close to our heart. And the same attention to clarity,
-            trust and human connection shapes the way we approach every
+          <CopyBlock lead="Remarkable businesses. Right here.">
+            Practices built on care. Services built on craft. Local brands that
+            have spent years showing up for their communities.
+          </CopyBlock>
+          <CopyBlock lead="Your digital presence should reflect that quality.">
+            We connect thoughtful design, useful content and practical marketing
+            into a clearer path from discovery to a real conversation.
+          </CopyBlock>
+          <p className="copy-note">
+            <strong>Healthcare is close to our heart.</strong> That same care
+            for clarity, trust and human connection shapes our work with every
             business.
           </p>
           <Link className="text-link" href="/approach">
