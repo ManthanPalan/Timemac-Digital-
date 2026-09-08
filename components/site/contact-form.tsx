@@ -23,6 +23,7 @@ const initial = {
   name: '',
   business: '',
   email: '',
+  phone: '',
   website: '',
   location: '',
   industry: '',
@@ -65,7 +66,7 @@ export function ContactForm({
   };
   const chosen = services.filter((s) => selected.includes(s.slug));
   const brief = () =>
-    `TIMEMAC DIGITAL — GROWTH CONVERSATION BRIEF\n\nPrepared by you. This brief has not been sent.\n\nYOUR BUSINESS\nName: ${data.name}\nBusiness: ${data.business}\nEmail: ${data.email}\nWebsite: ${data.website || 'Not provided'}\nLocation: ${locations.find((l) => l.slug === data.location)?.name || data.location}\nIndustry: ${industries.find((i) => i.slug === data.industry)?.name || data.industry}\n\nYOUR NEXT CHAPTER\nServices: ${chosen.map((s) => s.title).join(', ') || 'Help me choose'}\nMonthly marketing budget: ${data.budget}\nGoal: ${data.goal}\n\nA USEFUL STARTING POINT\n1. Review your current discovery, website and enquiry journey.\n2. ${chosen.length ? 'Explore ' + chosen.map((s) => s.title).join(' + ') + '.' : 'Choose the first channel around your audience and current setup.'}\n3. Agree on scope, responsibilities and useful measures of progress.\n\nNo booking has been made. Share this brief directly when Timemac Digital contact details are available.\n`;
+    `TIMEMAC DIGITAL — GROWTH CONVERSATION BRIEF\n\nPrepared by you. This brief has not been sent.\n\nYOUR BUSINESS\nName: ${data.name}\nBusiness: ${data.business}\nEmail: ${data.email}\nPhone: ${data.phone.trim()}\nWebsite: ${data.website || 'Not provided'}\nLocation: ${locations.find((l) => l.slug === data.location)?.name || data.location}\nIndustry: ${industries.find((i) => i.slug === data.industry)?.name || data.industry}\n\nYOUR NEXT CHAPTER\nServices: ${chosen.map((s) => s.title).join(', ') || 'Help me choose'}\nMonthly marketing budget: ${data.budget}\nGoal: ${data.goal}\n\nA USEFUL STARTING POINT\n1. Review your current discovery, website and enquiry journey.\n2. ${chosen.length ? 'Explore ' + chosen.map((s) => s.title).join(' + ') + '.' : 'Choose the first channel around your audience and current setup.'}\n3. Agree on scope, responsibilities and useful measures of progress.\n\nNo booking has been made. Share this brief directly when Timemac Digital contact details are available.\n`;
   function download() {
     const blob = new Blob([brief()], { type: 'text/plain;charset=utf-8' });
     const url = URL.createObjectURL(blob);
@@ -93,6 +94,14 @@ export function ContactForm({
           Nothing has been sent and no appointment has been booked.
         </p>
         <div className="brief-summary">
+          <div>
+            <span>YOUR CONTACT DETAILS</span>
+            <p>
+              {data.email}
+              <br />
+              {data.phone.trim()}
+            </p>
+          </div>
           <div>
             <span>YOUR FOCUS</span>
             <strong>
@@ -222,6 +231,23 @@ export function ContactForm({
               value={data.email}
               onChange={(e) => update('email', e.target.value)}
               placeholder="you@yourbusiness.com"
+            />
+          </label>
+          <label htmlFor="phone">
+            Phone number <span>*</span>
+            <Input
+              type="tel"
+              inputMode="tel"
+              id="phone"
+              name="phone"
+              autoComplete="tel"
+              required
+              maxLength={30}
+              pattern={String.raw`(?=(?:\D*\d){7,15}\D*$)\+?[\d\s\(\)\.\-]+`}
+              title="Enter 7 to 15 digits. You can include a country code, spaces, parentheses or hyphens."
+              value={data.phone}
+              onChange={(e) => update('phone', e.target.value)}
+              placeholder="+91 98765 43210"
             />
           </label>
           <label htmlFor="website">
