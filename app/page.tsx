@@ -101,23 +101,23 @@ export default function Home() {
                 </Link>
               </div>
             </div>
-            <Link href="/healthcare" className="editorial-photo">
+            <Link href="/services" className="marketing-banner">
               <Image
                 unoptimized
-                src="/images/healthcare.jpg"
-                alt="A physician in conversation with a patient"
-                width={1024}
-                height={1536}
+                src="/images/timemac-marketing-banner.webp"
+                alt="Timemac Digital Marketing — connecting your business with a wider world"
+                width={1672}
+                height={941}
                 fetchPriority="high"
+                loading="eager"
               />
-              <div className="editorial-photo-caption">
+              <div className="marketing-banner-caption">
                 <span>
-                  <small>OUR SPECIALIST FOCUS</small>Healthcare. With a human
-                  touch.
+                  <small>YOUR NEXT CHAPTER</small>Ideas that move your business
+                  forward.
                 </span>
                 <ArrowUpRight size={26} />
               </div>
-              <span className="photo-index">01 / HEALTHCARE</span>
             </Link>
           </div>
         </section>
@@ -137,7 +137,7 @@ export default function Home() {
               We connect every part of your digital journey.
             </p>
           </div>
-          <ServiceGrid />
+          <ServiceGrid showImages />
           <div className="section-bottom-link">
             <span>A connected approach. A clearer path forward.</span>
             <Link className="text-link" href="/services">
@@ -150,14 +150,14 @@ export default function Home() {
             <div className="healthcare-feature-image">
               <Image
                 unoptimized
-                src="/images/healthcare.jpg"
-                alt="A thoughtful doctor-patient conversation"
+                src="/images/marketing/healthcare-marketing.webp"
+                alt="A clinic owner and marketing strategist reviewing a clinic website and patient information materials"
                 width={1024}
-                height={1536}
+                height={1280}
                 loading="lazy"
               />
               <span className="image-caption">
-                HUMAN CONNECTION. AT THE HEART OF IT ALL.
+                GOOD CARE. A STRONGER DIGITAL PRESENCE.
               </span>
             </div>
             <div className="healthcare-feature-copy">

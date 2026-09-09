@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const s = services.find((x) => x.slug === slug);
   if (!s) return {};
-  const asset = getServiceImage(s.slug, true);
+  const asset = getServiceImage(s.slug, 'detail');
   const images = asset
     ? [
         {
@@ -53,7 +53,7 @@ export default async function Service({ params }: Props) {
   const s = services.find((x) => x.slug === slug);
   if (!s) notFound();
   const Icon = icons[s.icon];
-  const asset = getServiceImage(s.slug, true);
+  const asset = getServiceImage(s.slug, 'detail');
   return (
     <main id="main">
       <Breadcrumb

@@ -1,4 +1,52 @@
-/* A consistent frame for the supplied photography, illustrations and marks. */
+/* Preserve the full brand banner, with its caption outside the artwork. */
+.marketing-banner {
+  display: block;
+  align-self: center;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #fff;
+}
+.marketing-banner > img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+.marketing-banner-caption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 22px 24px;
+  background: var(--ink);
+  color: var(--paper);
+  font-size: clamp(15px, 1.4vw, 20px);
+  line-height: 1.4;
+}
+.marketing-banner-caption small {
+  display: block;
+  margin-bottom: 8px;
+  color: #f6a48b;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+}
+.marketing-banner-caption > svg {
+  flex-shrink: 0;
+  color: #f6a48b;
+  transition: transform 0.2s;
+}
+.marketing-banner:is(:hover, :focus-visible) .marketing-banner-caption > svg {
+  transform: translate(3px, -3px);
+}
+@media (prefers-reduced-motion: reduce) {
+  .marketing-banner-caption > svg {
+    transition: none;
+  }
+}
+
+/* A consistent frame for photography, illustrations and marks. */
 .service-artwork {
   display: grid;
   place-items: center;
@@ -27,7 +75,7 @@
 }
 .service-artwork-photo img {
   object-fit: cover;
-  object-position: 65% center;
+  object-position: center;
 }
 .service-image-grid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -130,6 +178,33 @@ main .service-image-grid .service-card p {
 .service-image-grid + .section-bottom-link {
   border-top: 0;
   padding-top: 28px;
+}
+/* Compact recommendations keep the original imagery exclusive to its page. */
+.service-link-grid .service-card-media {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  aspect-ratio: auto;
+  min-height: 84px;
+  border: 0;
+  border-radius: 0;
+  border-bottom: 1px solid var(--border);
+}
+.service-link-grid .service-strategy-art {
+  position: static;
+  padding: 0;
+  background: transparent;
+  color: var(--signal);
+}
+.service-link-grid .service-strategy-art > svg {
+  width: 34px;
+  height: 34px;
+  color: currentColor;
+}
+.service-link-grid .service-image-index {
+  position: static;
+  border: 0;
+  background: transparent;
 }
 .service-image-rows .service-row {
   grid-template-columns: 30px 190px minmax(0, 1fr) 44px;

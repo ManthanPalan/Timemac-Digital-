@@ -9,13 +9,52 @@ export type ServiceImage = {
   treatment: 'logo' | 'photo' | 'illustration';
 };
 
-const serviceImages: Partial<Record<ServiceSlug, ServiceImage>> = {
+// Each photographic asset has one visual placement across the site.
+// Shared recommendations use icons so they never repeat page artwork.
+const homeImages: Record<ServiceSlug, ServiceImage> = {
+  seo: marketingImage(
+    'search-marketing',
+    'Search research workspace with a laptop, keyword cards and a magnifying glass',
+  ),
+  'google-ads': marketingImage(
+    'paid-campaigns',
+    'An orange target and campaign mockups representing focused advertising',
+  ),
+  'crm-automation': marketingImage(
+    'customer-journey',
+    'Customer contact cards connected to an envelope and appointment calendar',
+  ),
+  'web-design': marketingImage(
+    'website-design',
+    'Coordinated business website designs on desktop and mobile screens',
+  ),
+  'social-media': marketingImage(
+    'social-content',
+    'A smartphone filming a product alongside a social content calendar',
+  ),
+  'growth-strategy': marketingImage(
+    'growth-strategy',
+    'A marketing planning notebook, research cards and ascending orange bars',
+  ),
+};
+
+function marketingImage(name: string, alt: string): ServiceImage {
+  return {
+    src: '/images/marketing/' + name + '.webp',
+    alt,
+    width: 1200,
+    height: 800,
+    treatment: 'photo',
+  };
+}
+
+const detailImages: Partial<Record<ServiceSlug, ServiceImage>> = {
   seo: {
-    src: '/images/seo-DwwDkx5R.png',
-    alt: 'SEO lettering in blue, yellow and red',
-    width: 512,
-    height: 512,
-    treatment: 'logo',
+    src: '/images/seo-page-optimized-Cr_0KyEd.jpg',
+    alt: 'SEO planning diagram connecting keywords, search, optimisation, traffic, backlinks and ranking',
+    width: 1400,
+    height: 933,
+    treatment: 'illustration',
   },
   'google-ads': {
     src: '/images/google-ads.png',
@@ -24,13 +63,10 @@ const serviceImages: Partial<Record<ServiceSlug, ServiceImage>> = {
     height: 768,
     treatment: 'logo',
   },
-  'crm-automation': {
-    src: '/images/automation-page-optimized-JK8PhvdK.jpg',
-    alt: 'A person using a phone for a connected, automated payment',
-    width: 1400,
-    height: 933,
-    treatment: 'photo',
-  },
+  'crm-automation': marketingImage(
+    'crm-workflow',
+    'A customer relationship dashboard with contact stages and a follow-up checklist',
+  ),
   'web-design': {
     src: '/images/laptop-coding-concept-web-developer-programming-laptop-screen-code-illustration_100456-1752-aUBiO-vq.avif',
     alt: 'Laptop with code on its screen, illustrating web development',
@@ -47,16 +83,11 @@ const serviceImages: Partial<Record<ServiceSlug, ServiceImage>> = {
   },
 };
 
-const seoDetailImage: ServiceImage = {
-  src: '/images/seo-page-optimized-Cr_0KyEd.jpg',
-  alt: 'SEO planning diagram connecting keywords, search, optimisation, traffic, backlinks and ranking',
-  width: 1400,
-  height: 933,
-  treatment: 'illustration',
-};
-
-export function getServiceImage(slug: ServiceSlug, detail = false) {
-  return detail && slug === 'seo' ? seoDetailImage : serviceImages[slug];
+export function getServiceImage(
+  slug: ServiceSlug,
+  placement: 'home' | 'detail',
+) {
+  return placement === 'home' ? homeImages[slug] : detailImages[slug];
 }
 
 export const hostingImage: ServiceImage = {

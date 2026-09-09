@@ -11,14 +11,7 @@ import {
   ChartNoAxesCombined,
 } from 'lucide-react';
 import { services } from '@/lib/content';
-import {
-  PageHero,
-  CTA,
-  Eyebrow,
-  icons,
-  ServiceArtwork,
-} from '@/components/site/shared';
-import { getServiceImage } from '@/lib/service-media';
+import { PageHero, CTA, Eyebrow, icons } from '@/components/site/shared';
 import { FAQ } from '@/components/site/interactive';
 export const metadata: Metadata = {
   title: 'Digital marketing services',
@@ -37,7 +30,6 @@ export default function Services() {
       <section className="wrap service-rows service-image-rows">
         {services.map((s, i) => {
           const Icon = icons[s.icon];
-          const asset = getServiceImage(s.slug);
           return (
             <Link
               href={'/services/' + s.slug}
@@ -46,11 +38,7 @@ export default function Services() {
             >
               <span className="row-number">0{i + 1}</span>
               <div className="service-row-media">
-                {asset ? (
-                  <ServiceArtwork asset={asset} decorative />
-                ) : (
-                  <Icon strokeWidth={1.2} aria-hidden="true" />
-                )}
+                <Icon strokeWidth={1.2} aria-hidden="true" />
               </div>
               <div className="service-row-copy">
                 <h2>{s.title}</h2>

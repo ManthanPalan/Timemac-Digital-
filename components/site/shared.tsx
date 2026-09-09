@@ -69,15 +69,26 @@ export function ServiceArtwork({
     </span>
   );
 }
-export function ServiceGrid({ slugs }: { slugs?: readonly string[] }) {
+export function ServiceGrid({
+  slugs,
+  showImages = false,
+}: {
+  slugs?: readonly string[];
+  showImages?: boolean;
+}) {
   const list = slugs
     ? services.filter((s) => slugs.includes(s.slug))
     : services;
   return (
-    <div className="service-grid service-image-grid">
+    <div
+      className={
+        'service-grid service-image-grid' +
+        (showImages ? '' : ' service-link-grid')
+      }
+    >
       {list.map((s, i) => {
         const Icon = icons[s.icon];
-        const asset = getServiceImage(s.slug);
+        const asset = showImages ? getServiceImage(s.slug, 'home') : undefined;
         return (
           <Link
             className="service-card"
@@ -90,11 +101,6 @@ export function ServiceGrid({ slugs }: { slugs?: readonly string[] }) {
               ) : (
                 <span className="service-strategy-art" aria-hidden="true">
                   <Icon strokeWidth={1} />
-                  <span>
-                    A clearer
-                    <br />
-                    <em>way forward.</em>
-                  </span>
                 </span>
               )}
               <span className="service-image-index">0{i + 1}</span>
