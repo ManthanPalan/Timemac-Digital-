@@ -6,15 +6,9 @@ import { BusinessContact } from '@/components/site/policy-layout';
 export const metadata: Metadata = {
   title: 'Let’s talk growth',
   description:
-    'Prepare a growth conversation with Timemac Digital. Tell us about your business, location and goals, and download your consultation brief.',
+    'Start a growth conversation with Timemac Digital. Send an enquiry about your business and marketing goals.',
 };
-export default async function Contact({
-  searchParams,
-}: {
-  searchParams: Promise<Record<string, string | string[] | undefined>>;
-}) {
-  const q = await searchParams;
-  const get = (key: string) => (typeof q[key] === 'string' ? q[key] : '');
+export default function Contact() {
   return (
     <main id="main">
       <section className="contact-layout wrap">
@@ -33,7 +27,7 @@ export default async function Contact({
           <CheckList
             items={[
               'A simple starting point for your goals',
-              'A brief you can review and keep',
+              'Tell us about your business and what you need',
               'No pressure. No commitments.',
             ]}
           />
@@ -49,11 +43,7 @@ export default async function Contact({
             <ArrowUpRight size={19} />
           </div>
         </div>
-        <ContactForm
-          initialService={get('service')}
-          initialLocation={get('location')}
-          initialIndustry={get('industry')}
-        />
+        <ContactForm />
       </section>
     </main>
   );

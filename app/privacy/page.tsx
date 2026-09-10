@@ -10,7 +10,7 @@ import { businessDetails } from '@/lib/business';
 export const metadata: Metadata = {
   title: 'Privacy Policy',
   description:
-    'How Timemac Digital handles contact details, consultation briefs, website requests and information associated with Razorpay payments.',
+    'How Timemac Digital handles contact details, form enquiries, website requests and information associated with Razorpay payments.',
   alternates: { canonical: '/privacy' },
 };
 const sections: PolicySection[] = [
@@ -31,22 +31,20 @@ const sections: PolicySection[] = [
     ),
   },
   {
-    id: 'consultation-brief',
-    title: 'Your consultation brief stays with you',
+    id: 'contact-form',
+    title: 'Enquiries through our contact form',
     content: (
       <>
         <p>
-          The form asks for your name, business, email, phone, website,
-          location, industry, services of interest, budget and goals. Entries
-          stay in the current page’s memory; the form does not send them to us,
-          save them in browser storage or take a payment. Reloading or closing
-          the page clears its entries.
+          Our contact page embeds the Timemac form hosted at
+          go.growcanada.online. When you submit it, the information you enter is
+          sent through that service so we can respond to your enquiry.
         </p>
         <p>
-          If you download the brief, your browser saves a text file on your
-          device. You control that copy and whether to share it. If you later
-          send it to us through a separate contact channel, the enquiry and
-          project practices below apply.
+          Loading the embedded form connects your browser to the form provider,
+          which may process technical information needed to display and operate
+          it. The enquiry and project practices below apply to information you
+          submit.
         </p>
         <p>
           Use business information only. Please do not enter patient details,
@@ -130,17 +128,17 @@ const sections: PolicySection[] = [
         <p>
           We do not sell personal information. Where necessary for the purposes
           described here, information may be handled by our hosting and
-          communications providers, Razorpay and payment partners, authorised
-          people delivering your project, and professional advisers. We may also
-          disclose information where law requires it or to address fraud,
-          security incidents or legal claims.
+          communications and form providers, Razorpay and payment partners,
+          authorised people delivering your project, and professional advisers.
+          We may also disclose information where law requires it or to address
+          fraud, security incidents or legal claims.
         </p>
         <p>
-          We work from India. Hosting, communications and payment services may
-          involve processing outside your country. Where applicable law requires
-          safeguards for a transfer, those safeguards must be in place; use of
-          the site is not a blanket consent to unrestricted transfers. Vercel
-          describes its practices in its{' '}
+          We work from India. Hosting, communications, form and payment services
+          may involve processing outside your country. Where applicable law
+          requires safeguards for a transfer, those safeguards must be in place;
+          use of the site is not a blanket consent to unrestricted transfers.
+          Vercel describes its practices in its{' '}
           <a href="https://vercel.com/legal/privacy-notice" rel="noreferrer">
             Privacy Notice
           </a>
@@ -155,18 +153,17 @@ const sections: PolicySection[] = [
     content: (
       <>
         <p>
-          This website currently does not include advertising pixels or
-          marketing analytics. Its fonts and images are served with the site.
-          Hosting security services and external payment pages may use cookies
-          or similar technologies for their own functions; their notices apply
-          when you use those services.
+          Fonts and images are served with the site. The embedded contact form,
+          hosting security services and external payment pages may use cookies
+          or similar technologies for their own functions. Review any notices
+          and consent choices provided by those services.
         </p>
         <p>
           You can manage cookies through your browser, although blocking
-          necessary payment or security cookies may affect those functions. We
-          will update this policy and provide any notice or consent choice
-          required before adding optional tracking. Following an external link
-          takes you to a service with its own privacy practices.
+          necessary form, payment or security cookies may affect those
+          functions. We will update this policy and provide any notice or
+          consent choice required before adding optional tracking. Following an
+          external link takes you to a service with its own privacy practices.
         </p>
       </>
     ),
@@ -177,10 +174,9 @@ const sections: PolicySection[] = [
     content: (
       <>
         <p>
-          Form entries remain only for the current page session; downloaded
-          copies stay on your device until you remove them. Enquiry and project
-          information shared with us is retained only for as long as needed to
-          respond, perform the agreement, resolve disputes or meet applicable
+          Enquiry and project information, including contact form submissions,
+          shared with us is retained only for as long as needed to respond,
+          perform the agreement, resolve disputes or meet applicable
           record-keeping duties. Billing and transaction records may need to be
           kept longer for accounting, tax or payment obligations.
         </p>
@@ -230,7 +226,7 @@ export default function Privacy() {
       path="/privacy"
       title="Privacy Policy."
       description="What you share, how it is used, and the choices that stay yours."
-      summary="Your website brief stays on your device unless you choose to share it. Separate enquiries, projects and payments involve only the information needed for those purposes."
+      summary="Contact form submissions are sent through our form provider so we can respond. Enquiries, projects and payments involve the information needed for those purposes."
       sections={sections}
     />
   );

@@ -33,9 +33,8 @@ const sections: PolicySection[] = [
           ))}
         </ul>
         <p>
-          Hosting is quoted within Web Design & Development. Budget ranges in
-          the consultation form help plan a discussion and are not advertised
-          service rates.
+          Hosting is quoted within Web Design & Development. Any budget you
+          share helps plan a discussion and is not an advertised service rate.
         </p>
       </>
     ),
@@ -64,7 +63,7 @@ const sections: PolicySection[] = [
         </ul>
         <p>
           Extra work requires an agreed change to the scope and price. There is
-          no charge for preparing the consultation brief on this website.
+          no charge for sending an enquiry through this website.
         </p>
       </>
     ),
@@ -94,10 +93,9 @@ const sections: PolicySection[] = [
     title: 'Discuss your scope',
     content: (
       <p>
-        Use the <Link href="/contact">consultation brief</Link> to organise your
-        goals, then share it through the business contact details when
-        available. The form itself does not send an enquiry, accept payment or
-        place an order.
+        Use the <Link href="/contact">contact form</Link> to tell us about your
+        goals and discuss your scope. Sending an enquiry does not place an
+        order.
       </p>
     ),
   },

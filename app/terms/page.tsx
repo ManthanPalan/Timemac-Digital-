@@ -56,9 +56,9 @@ const sections: PolicySection[] = [
           digital work is delivered.
         </p>
         <p>
-          The consultation form prepares a file on your device. It does not send
-          an enquiry, book a meeting or create a contract. Its budget options
-          are planning preferences, not our prices.
+          The contact form sends an enquiry. Submitting it does not create a
+          contract or confirm a meeting. Any budget you share is a planning
+          preference, not an agreed price.
         </p>
       </>
     ),

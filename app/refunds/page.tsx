@@ -26,9 +26,8 @@ const sections: PolicySection[] = [
           passwords.
         </p>
         <p>
-          The website’s consultation form only prepares a downloadable brief; it
-          does not deliver a cancellation or refund request. Use direct support
-          details or the verified contact on your project agreement.
+          For cancellation or refund requests, use direct support details or the
+          verified contact on your project agreement.
         </p>
         <BusinessContact />
       </>
