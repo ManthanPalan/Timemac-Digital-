@@ -10,7 +10,7 @@ import { businessDetails } from '@/lib/business';
 export const metadata: Metadata = {
   title: 'Privacy Policy',
   description:
-    'How Timemac Digital handles contact details, form enquiries, website requests and information associated with Razorpay payments.',
+    'How Timemac Digital handles contact form submissions, website requests and information associated with Razorpay payments.',
   alternates: { canonical: '/privacy' },
 };
 const sections: PolicySection[] = [
@@ -32,19 +32,20 @@ const sections: PolicySection[] = [
   },
   {
     id: 'contact-form',
-    title: 'Enquiries through our contact form',
+    title: 'Contact form submissions',
     content: (
       <>
         <p>
-          Our contact page embeds the Timemac form hosted at
-          go.growcanada.online. When you submit it, the information you enter is
-          sent through that service so we can respond to your enquiry.
+          Our contact page includes a hosted form served from
+          links.timemacoriginals.com. When you submit the form, the details you
+          provide are sent through that service so our team can respond to your
+          enquiry. The enquiry and project practices below apply to information
+          shared through the form.
         </p>
         <p>
           Loading the embedded form connects your browser to the form provider,
           which may process technical information needed to display and operate
-          it. The enquiry and project practices below apply to information you
-          submit.
+          it.
         </p>
         <p>
           Use business information only. Please do not enter patient details,
@@ -128,10 +129,10 @@ const sections: PolicySection[] = [
         <p>
           We do not sell personal information. Where necessary for the purposes
           described here, information may be handled by our hosting and
-          communications and form providers, Razorpay and payment partners,
-          authorised people delivering your project, and professional advisers.
-          We may also disclose information where law requires it or to address
-          fraud, security incidents or legal claims.
+          communications and contact form providers, Razorpay and payment
+          partners, authorised people delivering your project, and professional
+          advisers. We may also disclose information where law requires it or to
+          address fraud, security incidents or legal claims.
         </p>
         <p>
           We work from India. Hosting, communications, form and payment services
@@ -153,10 +154,11 @@ const sections: PolicySection[] = [
     content: (
       <>
         <p>
-          Fonts and images are served with the site. The embedded contact form,
-          hosting security services and external payment pages may use cookies
-          or similar technologies for their own functions. Review any notices
-          and consent choices provided by those services.
+          This website includes Google Tag Manager and an embedded contact form.
+          Its fonts and images are served with the site. Hosting security
+          services, the contact form and external payment pages may use cookies
+          or similar technologies for their own functions; their notices apply
+          when you use those services.
         </p>
         <p>
           You can manage cookies through your browser, although blocking
@@ -174,8 +176,8 @@ const sections: PolicySection[] = [
     content: (
       <>
         <p>
-          Enquiry and project information, including contact form submissions,
-          shared with us is retained only for as long as needed to respond,
+          Contact form submissions and other enquiry and project information
+          shared with us are retained only for as long as needed to respond,
           perform the agreement, resolve disputes or meet applicable
           record-keeping duties. Billing and transaction records may need to be
           kept longer for accounting, tax or payment obligations.
@@ -226,7 +228,7 @@ export default function Privacy() {
       path="/privacy"
       title="Privacy Policy."
       description="What you share, how it is used, and the choices that stay yours."
-      summary="Contact form submissions are sent through our form provider so we can respond. Enquiries, projects and payments involve the information needed for those purposes."
+      summary="Details submitted through our hosted contact form are used to respond to your enquiry. Projects and payments involve the information needed for those purposes."
       sections={sections}
     />
   );

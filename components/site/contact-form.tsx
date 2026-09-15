@@ -1,18 +1,19 @@
-﻿import Script from 'next/script';
+import Script from 'next/script';
 
 export function ContactForm() {
   return (
-    <div style={{ minWidth: 0 }}>
+    <div style={{ width: '100%', minWidth: 0 }}>
       <iframe
-        src="https://go.growcanada.online/widget/form/vOwBESqN6WDm57ISJl1y"
+        src="https://links.timemacoriginals.com/widget/form/PhEe9M2XrqJ3BzNnPe7S"
         style={{
           display: 'block',
           width: '100%',
-          height: '1169px',
+          height: '100%',
+          minHeight: 690,
           border: 'none',
-          borderRadius: '8px',
+          borderRadius: 8,
         }}
-        id="inline-vOwBESqN6WDm57ISJl1y"
+        id="inline-PhEe9M2XrqJ3BzNnPe7S"
         data-layout="{'id':'INLINE'}"
         data-trigger-type="alwaysShow"
         data-trigger-value=""
@@ -20,16 +21,16 @@ export function ContactForm() {
         data-activation-value=""
         data-deactivation-type="neverDeactivate"
         data-deactivation-value=""
-        data-form-name="Timemac"
-        data-height="1169"
-        data-layout-iframe-id="inline-vOwBESqN6WDm57ISJl1y"
-        data-form-id="vOwBESqN6WDm57ISJl1y"
+        data-form-name="Contact Form"
+        data-height="690"
+        data-layout-iframe-id="inline-PhEe9M2XrqJ3BzNnPe7S"
+        data-form-id="PhEe9M2XrqJ3BzNnPe7S"
         data-cookie-consent="true"
         data-cookie-consent-provider="auto"
-        title="Timemac"
+        title="Contact Form"
       />
       <Script
-        src="https://go.growcanada.online/js/form_embed.js"
+        src="https://links.timemacoriginals.com/js/form_embed.js"
         strategy="afterInteractive"
       />
     </div>

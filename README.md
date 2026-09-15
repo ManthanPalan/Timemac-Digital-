@@ -40,7 +40,7 @@ Content lives in `lib/content.ts`; reusable UI lives in `components/site`. The s
 
 Public business identity and support details are configured in `lib/business.ts`. The legal business name, full postal address, support email and phone are awaiting the owner's verified details; no contact information has been invented. These values populate the contact page and policy contact blocks.
 
-The contact form builds a downloadable text brief in the visitor’s browser, including the visitor's phone number. It does **not** submit an enquiry, make a booking or process a payment. Add an approved delivery integration before enabling enquiry submission, and update the privacy notice if that behaviour changes.
+The contact page embeds the owner-provided Contact Form (`PhEe9M2XrqJ3BzNnPe7S`) from `links.timemacoriginals.com`, with its companion `form_embed.js` script and cookie-consent attributes. Fields, submissions and confirmation behaviour are managed by the hosted form. The iframe reserves at least 690px of height while the embed script manages sizing.
 
 ## Payment policy pages
 

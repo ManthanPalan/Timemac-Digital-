@@ -6,7 +6,7 @@ import { BusinessContact } from '@/components/site/policy-layout';
 export const metadata: Metadata = {
   title: 'Let’s talk growth',
   description:
-    'Start a growth conversation with Timemac Digital. Send an enquiry about your business and marketing goals.',
+    'Start a growth conversation with Timemac Digital. Use our contact form to tell us about your business and goals.',
 };
 export default function Contact() {
   return (
@@ -27,7 +27,7 @@ export default function Contact() {
           <CheckList
             items={[
               'A simple starting point for your goals',
-              'Tell us about your business and what you need',
+              'A direct way to contact our team',
               'No pressure. No commitments.',
             ]}
           />
