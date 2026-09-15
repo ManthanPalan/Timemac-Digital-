@@ -13,6 +13,7 @@ import {
 } from '@/components/ui/sheet';
 import { services, locations } from '@/lib/content';
 import { policyLinks } from '@/lib/policies';
+import { businessDetails } from '@/lib/business';
 import {
   DesktopNavigation,
   MobileNavigation,
@@ -149,6 +150,24 @@ export function Footer() {
             </span>
           </div>
         </div>
+        <address className="footer-contact" aria-label="Business contact details">
+          <div>
+            <h3>ADDRESS</h3>
+            <p>{businessDetails.address}</p>
+          </div>
+          <div>
+            <h3>EMAIL</h3>
+            <a href={`mailto:${businessDetails.email}`}>
+              {businessDetails.email}
+            </a>
+          </div>
+          <div>
+            <h3>PHONE</h3>
+            <a href={`tel:${businessDetails.phone.replace(/[^+\d]/g, '')}`}>
+              {businessDetails.phone}
+            </a>
+          </div>
+        </address>
         <div className="footer-wordmark" aria-hidden="true">
           let’s grow
           <span>

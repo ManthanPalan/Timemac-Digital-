@@ -551,6 +551,39 @@ main .editorial-intro > .hero-audience {
   letter-spacing: 0.09em;
   color: var(--footer-secondary);
 }
+.site-footer .footer-contact {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.5fr) minmax(0, 1fr);
+  gap: 24px 36px;
+  padding-block: 32px;
+  border-top: 1px solid #5c5147;
+  font-size: 17px;
+  font-style: normal;
+  line-height: 1.65;
+}
+.footer-contact > div {
+  min-width: 0;
+}
+.footer-contact h3 {
+  margin-bottom: 12px;
+  color: var(--footer-accent);
+  font-size: 12px;
+  font-weight: 650;
+  letter-spacing: 0.1em;
+}
+.footer-contact p {
+  margin: 0;
+  max-width: 32ch;
+  color: var(--footer-secondary);
+}
+.footer-contact a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  max-width: 100%;
+  color: var(--footer-text);
+  overflow-wrap: anywhere;
+}
 .site-footer .footer-bottom {
   flex-wrap: wrap;
   color: var(--footer-secondary);
@@ -604,6 +637,10 @@ main .editorial-intro > .hero-audience {
   }
 }
 @media (max-width: 600px) {
+  .site-footer .footer-contact {
+    grid-template-columns: minmax(0, 1fr);
+    font-size: 16px;
+  }
   .site-header {
     gap: 8px;
   }

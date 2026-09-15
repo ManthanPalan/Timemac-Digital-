@@ -9,7 +9,7 @@ export const businessDetails: {
 } = {
   tradingName: 'Timemac Digital',
   legalName: '',
-  address: '',
-  email: '',
-  phone: '',
+  address: 'A2/603 Spandana Apartment, Santhekatte, Udupi',
+  email: 'manthan@timemacoriginals.com',
+  phone: '+91 7619371435',
 };
