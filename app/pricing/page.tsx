@@ -80,7 +80,7 @@ const sections: PolicySection[] = [
           apply currency-conversion or cross-border charges separately.
         </p>
         <p>
-          Read the <Link href="/terms">Terms of Service</Link>,{' '}
+          Read the <Link href="/terms">Terms & Conditions</Link>,{' '}
           <Link href="/refunds">Cancellation & Refunds Policy</Link> and{' '}
           <Link href="/shipping">Shipping & Delivery Policy</Link> together with
           your proposal before agreeing to proceed.

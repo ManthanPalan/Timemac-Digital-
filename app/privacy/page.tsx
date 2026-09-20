@@ -6,218 +6,312 @@ import {
   type PolicySection,
 } from '@/components/site/policy-layout';
 import { businessDetails } from '@/lib/business';
+import { smsPolicyUpdated } from '@/lib/policies';
 
 export const metadata: Metadata = {
   title: 'Privacy Policy',
   description:
-    'How Timemac Digital handles contact form submissions, website requests and information associated with Razorpay payments.',
+    'How Timemac Digital collects, uses and protects personal information, including SMS consent, messaging preferences and our SMS no-sharing policy.',
   alternates: { canonical: '/privacy' },
 };
 const sections: PolicySection[] = [
   {
-    id: 'who-we-are',
-    title: 'Who handles your information',
+    id: 'information-we-collect',
+    title: 'Information We Collect',
     content: (
       <>
         <p>
-          This policy explains how{' '}
-          {businessDetails.legalName || 'Timemac Digital'} handles personal
-          information in connection with the Timemac Digital website, enquiries,
-          client projects and payments. It does not replace a separate
-          data-processing agreement for work we carry out on a client’s behalf.
+          We may collect information that you voluntarily provide to us,
+          including:
         </p>
-        <BusinessContact />
-      </>
-    ),
-  },
-  {
-    id: 'contact-form',
-    title: 'Contact form submissions',
-    content: (
-      <>
-        <p>
-          Our contact page includes a hosted form served from
-          links.timemacoriginals.com. When you submit the form, the details you
-          provide are sent through that service so our team can respond to your
-          enquiry. The enquiry and project practices below apply to information
-          shared through the form.
-        </p>
-        <p>
-          Loading the embedded form connects your browser to the form provider,
-          which may process technical information needed to display and operate
-          it.
-        </p>
-        <p>
-          Use business information only. Please do not enter patient details,
-          health records, passwords or payment credentials.
-        </p>
-      </>
-    ),
-  },
-  {
-    id: 'information-and-purposes',
-    title: 'Information we receive & why',
-    content: (
-      <>
         <ul>
-          <li>
-            <strong>Enquiries and projects:</strong> information you send
-            directly, such as contact details, requirements, communications and
-            approved project materials, to respond, prepare proposals and
-            deliver agreed work.
-          </li>
-          <li>
-            <strong>Billing:</strong> where you become a paying client, your
-            invoice details, billing address or country, business tax details
-            where relevant, and transaction references, amounts, currency and
-            status, to reconcile payments, issue refunds and maintain required
-            records.
-          </li>
-          <li>
-            <strong>Website requests:</strong> our hosting provider, Vercel, may
-            process IP addresses, browser/device information, requested pages,
-            timestamps and diagnostic logs to serve and secure the site.
-          </li>
+          <li>Full name</li>
+          <li>Email address</li>
+          <li>Phone number</li>
+          <li>Company or business name</li>
+          <li>Information submitted through contact forms</li>
+          <li>Appointment or consultation information</li>
+          <li>Communications you send to us</li>
+          <li>SMS consent and messaging preferences</li>
         </ul>
         <p>
-          We use personal information only for the stated purposes, related
-          support, fraud prevention, legal obligations and resolving disputes.
-          Where applicable law requires consent, we seek it separately. Choosing
-          to enquire or pay does not automatically subscribe you to marketing
-          messages.
+          We may also automatically collect certain technical information when
+          you use our website, including:
+        </p>
+        <ul>
+          <li>IP address</li>
+          <li>Browser type</li>
+          <li>Device information</li>
+          <li>Pages visited</li>
+          <li>Referring website</li>
+          <li>Date and time of visits</li>
+          <li>Cookie and analytics information</li>
+        </ul>
+      </>
+    ),
+  },
+  {
+    id: 'how-we-use-your-information',
+    title: 'How We Use Your Information',
+    content: (
+      <>
+        <p>We may use your information to:</p>
+        <ul>
+          <li>Respond to inquiries and requests</li>
+          <li>Provide our digital marketing and related services</li>
+          <li>Schedule and manage consultations or appointments</li>
+          <li>Send requested service information</li>
+          <li>Provide customer support</li>
+          <li>
+            Send appointment reminders and account or service notifications
+          </li>
+          <li>
+            Send marketing or promotional communications when you have provided
+            appropriate consent
+          </li>
+          <li>Improve our website, services, and customer experience</li>
+          <li>Analyze website usage and performance</li>
+          <li>Prevent fraud, misuse, or security incidents</li>
+          <li>Comply with applicable legal and regulatory requirements</li>
+        </ul>
+      </>
+    ),
+  },
+  {
+    id: 'sms-communications-and-consent',
+    title: 'SMS Communications and Consent',
+    content: (
+      <>
+        <p>
+          When you provide your phone number and separately consent to receive
+          text messages from Timemac Digital, we may send you marketing and
+          informational SMS messages, including service updates, appointment
+          reminders, follow-ups, offers, and promotional communications.
+        </p>
+        <p>Message frequency varies. Message and data rates may apply.</p>
+        <p>
+          You may opt out of SMS communications at any time by replying{' '}
+          <strong>STOP</strong> to any message. After opting out, you may
+          receive a confirmation message indicating that you have been
+          unsubscribed.
+        </p>
+        <p>
+          For assistance, reply <strong>HELP</strong> or contact us at{' '}
+          <strong>
+            <a href={`mailto:${businessDetails.email}`}>
+              {businessDetails.email}
+            </a>
+          </strong>{' '}
+          or{' '}
+          <strong>
+            <a href={`tel:${businessDetails.phone.replace(/[^+\d]/g, '')}`}>
+              {businessDetails.phone}
+            </a>
+          </strong>
+          .
+        </p>
+        <p>
+          Providing SMS consent is optional and is not a condition of purchasing
+          any goods or services.
         </p>
       </>
     ),
   },
   {
-    id: 'razorpay',
-    title: 'Payments through Razorpay',
+    id: 'sms-privacy-and-no-sharing-policy',
+    title: 'SMS Privacy and No-Sharing Policy',
     content: (
       <>
         <p>
-          If you use a Razorpay payment link or checkout that we provide,
-          Razorpay and its payment partners process the payment information you
-          supply. This can include contact and billing details, payment
-          instrument information, transaction details and technical information
-          needed for authentication, security and fraud checks.
+          <strong>
+            Timemac Digital does not sell, rent, share, or disclose mobile phone
+            numbers, SMS opt-in data, or SMS consent information to third
+            parties or affiliates for their own marketing or promotional
+            purposes.
+          </strong>
         </p>
         <p>
-          We may receive the payment reference, status, amount, currency and
-          relevant customer or billing details needed to fulfil and reconcile
-          the order or manage a refund. We do not request or store full card
-          numbers, CVV/security codes, banking passwords or one-time passwords
-          through this website.
+          Information obtained as part of the SMS consent process will be used
+          only for the purposes described in this{' '}
+          <Link href="/privacy">Privacy Policy</Link> and for providing the
+          messaging services to which you have consented.
         </p>
         <p>
-          Razorpay’s own handling of payment data is explained in its{' '}
-          <a href="https://razorpay.com/privacy-policy/" rel="noreferrer">
-            Privacy Policy
-          </a>
-          . International payment providers and banks may process data in the
-          countries where they operate, subject to their legal obligations.
-          Payment availability depends on the options enabled for the
-          transaction.
+          We may disclose information to service providers that assist us in
+          operating our communications infrastructure solely as necessary to
+          provide services on our behalf. Such service providers are not
+          permitted to use SMS opt-in information for their own marketing
+          purposes.
+        </p>
+        <p>
+          <strong>
+            SMS consent and mobile information will not be shared with third
+            parties or affiliates for marketing or promotional purposes.
+          </strong>
         </p>
       </>
     ),
   },
   {
-    id: 'sharing-and-transfers',
-    title: 'Sharing & international processing',
+    id: 'cookies-and-tracking-technologies',
+    title: 'Cookies and Tracking Technologies',
     content: (
       <>
         <p>
-          We do not sell personal information. Where necessary for the purposes
-          described here, information may be handled by our hosting and
-          communications and contact form providers, Razorpay and payment
-          partners, authorised people delivering your project, and professional
-          advisers. We may also disclose information where law requires it or to
-          address fraud, security incidents or legal claims.
+          Our website may use cookies, pixels, analytics technologies, and
+          similar tools to understand website usage, improve functionality,
+          measure marketing performance, and enhance the user experience.
         </p>
         <p>
-          We work from India. Hosting, communications, form and payment services
-          may involve processing outside your country. Where applicable law
-          requires safeguards for a transfer, those safeguards must be in place;
-          use of the site is not a blanket consent to unrestricted transfers.
-          Vercel describes its practices in its{' '}
-          <a href="https://vercel.com/legal/privacy-notice" rel="noreferrer">
-            Privacy Notice
-          </a>
+          Cookies may collect information such as browser type, device
+          information, IP address, pages viewed, and interactions with our
+          website.
+        </p>
+        <p>
+          You may control or disable cookies through your browser settings.
+          Disabling certain cookies may affect some website functionality.
+        </p>
+      </>
+    ),
+  },
+  {
+    id: 'how-we-share-information',
+    title: 'How We Share Information',
+    content: (
+      <>
+        <p>
+          We may share personal information with service providers that perform
+          services on our behalf, such as website hosting, analytics, customer
+          relationship management, communications, and other operational
+          services.
+        </p>
+        <p>
+          We may also disclose information when required by law, legal process,
+          court order, or governmental request, or where reasonably necessary to
+          protect our rights, property, users, or others.
+        </p>
+        <p>
+          <strong>
+            Mobile phone numbers, SMS opt-in information, and SMS consent are
+            excluded from any sharing for third-party or affiliate marketing
+            purposes.
+          </strong>
+        </p>
+      </>
+    ),
+  },
+  {
+    id: 'data-security',
+    title: 'Data Security',
+    content: (
+      <>
+        <p>
+          We use reasonable administrative, technical, and organizational
+          safeguards designed to protect personal information against
+          unauthorized access, alteration, disclosure, loss, or misuse.
+        </p>
+        <p>
+          However, no method of internet transmission or electronic storage is
+          completely secure, and we cannot guarantee absolute security.
+        </p>
+      </>
+    ),
+  },
+  {
+    id: 'data-retention',
+    title: 'Data Retention',
+    content: (
+      <>
+        <p>
+          We retain personal information only for as long as reasonably
+          necessary to provide our services, fulfill the purposes described in
+          this <Link href="/privacy">Privacy Policy</Link>, comply with legal
+          obligations, resolve disputes, and enforce agreements.
+        </p>
+      </>
+    ),
+  },
+  {
+    id: 'your-rights-and-choices',
+    title: 'Your Rights and Choices',
+    content: (
+      <>
+        <p>Depending on applicable law, you may have the right to:</p>
+        <ul>
+          <li>Request access to personal information we maintain about you</li>
+          <li>Request correction or updating of inaccurate information</li>
+          <li>Request deletion of certain personal information</li>
+          <li>Withdraw marketing consent</li>
+          <li>Unsubscribe from email communications</li>
+          <li>Opt out of SMS communications by replying STOP</li>
+        </ul>
+        <p>
+          To submit a privacy-related request, contact us at{' '}
+          <strong>
+            <a href={`mailto:${businessDetails.email}`}>
+              {businessDetails.email}
+            </a>
+          </strong>
           .
         </p>
       </>
     ),
   },
   {
-    id: 'cookies',
-    title: 'Cookies, analytics & external links',
+    id: 'third-party-links',
+    title: 'Third-Party Links',
     content: (
       <>
         <p>
-          This website includes Google Tag Manager and an embedded contact form.
-          Its fonts and images are served with the site. Hosting security
-          services, the contact form and external payment pages may use cookies
-          or similar technologies for their own functions; their notices apply
-          when you use those services.
-        </p>
-        <p>
-          You can manage cookies through your browser, although blocking
-          necessary form, payment or security cookies may affect those
-          functions. We will update this policy and provide any notice or
-          consent choice required before adding optional tracking. Following an
-          external link takes you to a service with its own privacy practices.
+          Our website may contain links to third-party websites or services.
+          Timemac Digital is not responsible for the privacy practices, content,
+          or security of third-party websites.
         </p>
       </>
     ),
   },
   {
-    id: 'retention-and-security',
-    title: 'Keeping information safe & only as needed',
+    id: 'children-s-privacy',
+    title: "Children's Privacy",
     content: (
       <>
         <p>
-          Contact form submissions and other enquiry and project information
-          shared with us are retained only for as long as needed to respond,
-          perform the agreement, resolve disputes or meet applicable
-          record-keeping duties. Billing and transaction records may need to be
-          kept longer for accounting, tax or payment obligations.
-        </p>
-        <p>
-          We aim to minimise the data used for each purpose and restrict access
-          to authorised people who need it. No online service can guarantee
-          absolute security. Please use agreed secure channels for project
-          access and avoid emailing passwords or card details.
+          Our services are intended for individuals who are at least 18 years
+          old. We do not knowingly collect personal information from children
+          under the age of 18 through our SMS program.
         </p>
       </>
     ),
   },
   {
-    id: 'choices-and-contact',
-    title: 'Your choices, requests & complaints',
+    id: 'changes-to-this-privacy-policy',
+    title: 'Changes to This Privacy Policy',
     content: (
       <>
         <p>
-          You can choose not to share information, though some details may be
-          needed to respond or provide a paid service. Depending on applicable
-          law, you may request access, correction or deletion, withdraw consent,
-          or raise a privacy complaint using the business support details above.
-          We may ask for proportionate identity verification and explain any
-          records we must retain.
+          We may update this <Link href="/privacy">Privacy Policy</Link>{' '}
+          periodically. Any changes will be posted on this page with an updated
+          effective or revision date.
         </p>
         <p>
-          Withdrawing consent does not affect processing already lawfully
-          carried out. Where available, you may also complain to the relevant
-          data-protection authority. This website is intended for adults acting
-          for businesses; it is not directed to children under 18. Contact us if
-          you believe a child has shared information with us.
+          Continued use of our website or services after changes are posted
+          constitutes acknowledgment of the updated policy where permitted by
+          law.
         </p>
+      </>
+    ),
+  },
+  {
+    id: 'contact-us',
+    title: 'Contact Us',
+    content: (
+      <>
         <p>
-          We will update the date on this page when practices change and provide
-          additional notice or request consent where required for material
-          changes. The <Link href="/terms">Terms of Service</Link> and{' '}
-          <Link href="/refunds">Cancellation & Refunds Policy</Link> cover the
-          commercial side of working with us.
+          If you have questions about this{' '}
+          <Link href="/privacy">Privacy Policy</Link> or our privacy practices,
+          contact:
         </p>
+        <BusinessContact />
       </>
     ),
   },
@@ -227,8 +321,10 @@ export default function Privacy() {
     <PolicyLayout
       path="/privacy"
       title="Privacy Policy."
-      description="What you share, how it is used, and the choices that stay yours."
-      summary="Details submitted through our hosted contact form are used to respond to your enquiry. Projects and payments involve the information needed for those purposes."
+      description="What we collect, how we use it, and your privacy and messaging choices."
+      summary="Timemac Digital respects your privacy and is committed to protecting the personal information you provide to us. This Privacy Policy explains what information we collect, how we use it, how we protect it, and the choices available to you."
+      updated={smsPolicyUpdated}
+      showDraftNotice={false}
       sections={sections}
     />
   );

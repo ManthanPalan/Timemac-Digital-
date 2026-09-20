@@ -51,12 +51,16 @@ export function PolicyLayout({
   description,
   summary,
   sections,
+  updated = { dateTime: policyUpdated, label: policyUpdatedLabel },
+  showDraftNotice = true,
 }: {
   path: string;
   title: string;
   description: string;
   summary: string;
   sections: PolicySection[];
+  updated?: { dateTime: string; label: string };
+  showDraftNotice?: boolean;
 }) {
   return (
     <main id="main" className="policy-page">
@@ -87,21 +91,22 @@ export function PolicyLayout({
         </aside>
         <article className="policy-content">
           <div className="policy-summary">
-            {(!businessDetails.legalName ||
-              !businessDetails.address ||
-              !businessDetails.email ||
-              !businessDetails.phone) && (
-              <p className="policy-draft">
-                <strong>Draft for review.</strong> Business identity, support
-                details and the proposed commercial terms need confirmation
-                before these policies are used for payment collection.
-              </p>
-            )}
+            {showDraftNotice &&
+              (!businessDetails.legalName ||
+                !businessDetails.address ||
+                !businessDetails.email ||
+                !businessDetails.phone) && (
+                <p className="policy-draft">
+                  <strong>Draft for review.</strong> Business identity, support
+                  details and the proposed commercial terms need confirmation
+                  before these policies are used for payment collection.
+                </p>
+              )}
             <span className="policy-label">AT A GLANCE</span>
             <p>{summary}</p>
             <span className="policy-updated">
               Last updated{' '}
-              <time dateTime={policyUpdated}>{policyUpdatedLabel}</time>
+              <time dateTime={updated.dateTime}>{updated.label}</time>
             </span>
           </div>
           {sections.map((section, index) => (

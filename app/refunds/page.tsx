@@ -162,9 +162,10 @@ const sections: PolicySection[] = [
           available under consumer law or through your bank or payment provider.
         </p>
         <p>
-          Read this policy with the <Link href="/terms">Terms of Service</Link>{' '}
-          and your written project agreement. Nothing here prevents a refund or
-          other remedy required by applicable law.
+          Read this policy with the{' '}
+          <Link href="/terms">Terms & Conditions</Link> and your written project
+          agreement. Nothing here prevents a refund or other remedy required by
+          applicable law.
         </p>
       </>
     ),

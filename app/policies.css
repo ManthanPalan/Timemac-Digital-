@@ -22,6 +22,8 @@
 .policy-sidebar {
   position: sticky;
   top: 32px;
+  max-height: calc(100dvh - 64px);
+  overflow-y: auto;
   border-top: 2px solid var(--ink);
   padding-top: 22px;
 }
@@ -202,6 +204,20 @@
 #business-details {
   scroll-margin-top: 24px;
 }
+.contact-policy-links {
+  margin-top: 20px;
+  color: var(--copy-color);
+  font-size: 15px;
+  line-height: 1.8;
+}
+.contact-policy-links a {
+  color: #883c27;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.contact-policy-links a:is(:hover, :focus-visible) {
+  color: var(--ink);
+}
 .policy-related {
   margin-top: 34px;
   display: grid;
@@ -250,6 +266,8 @@
   }
   .policy-sidebar {
     position: static;
+    max-height: none;
+    overflow-y: visible;
   }
   .policy-sidebar nav {
     grid-template-columns: repeat(2, minmax(0, 1fr));

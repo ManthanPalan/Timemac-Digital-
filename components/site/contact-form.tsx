@@ -1,4 +1,5 @@
 import Script from 'next/script';
+import Link from 'next/link';
 
 export function ContactForm() {
   return (
@@ -29,6 +30,10 @@ export function ContactForm() {
         data-cookie-consent-provider="auto"
         title="Contact Form"
       />
+      <p className="contact-policy-links">
+        View our <Link href="/privacy">Privacy Policy</Link> and{' '}
+        <Link href="/terms">Terms & Conditions</Link>.
+      </p>
       <Script
         src="https://links.timemacoriginals.com/js/form_embed.js"
         strategy="afterInteractive"
