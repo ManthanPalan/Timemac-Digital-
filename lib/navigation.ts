@@ -58,6 +58,11 @@ export const navigationGroups: NavigationGroup[] = [
     description: 'Independent thinking, local understanding.',
     links: [
       {
+        href: '/#portfolio',
+        label: 'Our portfolio',
+        description: 'Explore healthcare websites we’ve brought to life.',
+      },
+      {
         href: '/approach',
         label: 'Our approach',
         description: 'How we turn your goals into a practical plan.',

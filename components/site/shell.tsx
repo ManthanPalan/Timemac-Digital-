@@ -126,6 +126,7 @@ export function Footer() {
           </div>
           <div className="footer-column">
             <h3>EXPLORE</h3>
+            <Link href="/#portfolio">Our portfolio</Link>
             <Link href="/healthcare">Healthcare marketing</Link>
             <Link href="/industries">Industries we serve</Link>
             <Link href="/approach">Our approach</Link>
@@ -150,7 +151,10 @@ export function Footer() {
             </span>
           </div>
         </div>
-        <address className="footer-contact" aria-label="Business contact details">
+        <address
+          className="footer-contact"
+          aria-label="Business contact details"
+        >
           <div>
             <h3>ADDRESS</h3>
             <p>{businessDetails.address}</p>

@@ -18,6 +18,8 @@ import {
   CopyBlock,
 } from '@/components/site/shared';
 import { FAQ, IndustrySelector } from '@/components/site/interactive';
+import { Portfolio } from '@/components/site/portfolio';
+import { Reviews } from '@/components/site/reviews';
 
 export default function Home() {
   return (
@@ -192,10 +194,12 @@ export default function Home() {
             </div>
           </div>
         </section>
+        <Portfolio />
+        <Reviews />
         <section className="section wrap">
           <div className="section-heading">
             <div>
-              <Eyebrow>03 / SECTORS WE UNDERSTAND</Eyebrow>
+              <Eyebrow>05 / SECTORS WE UNDERSTAND</Eyebrow>
               <h2>
                 Different industries.
                 <br />
@@ -215,7 +219,7 @@ export default function Home() {
           <div className="wrap">
             <div className="section-heading">
               <div>
-                <Eyebrow>04 / HOW WE WORK</Eyebrow>
+                <Eyebrow>06 / HOW WE WORK</Eyebrow>
                 <h2>
                   Less guesswork.
                   <br />
@@ -278,7 +282,7 @@ export default function Home() {
         <section className="section wrap insights-home">
           <div className="section-heading">
             <div>
-              <Eyebrow>05 / NOTES FROM THE STUDIO</Eyebrow>
+              <Eyebrow>07 / NOTES FROM THE STUDIO</Eyebrow>
               <h2>
                 Fresh thinking.
                 <br />

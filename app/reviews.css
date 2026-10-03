@@ -1,0 +1,9 @@
+.reviews-section {
+  border-block: 1px solid var(--border);
+  background: var(--card);
+  scroll-margin-top: 24px;
+}
+
+.reviews-section .wrap {
+  min-width: 0;
+}

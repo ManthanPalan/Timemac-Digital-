@@ -36,6 +36,10 @@ If a deployment reports `No Output Directory named "dist" found`, deploy a new c
 
 Content lives in `lib/content.ts`; reusable UI lives in `components/site`. The site includes home, services and six service detail pages, healthcare, industries and six industry detail pages, three local landing pages, about, approach, insights and three articles, contact, privacy, terms and a custom 404.
 
+The homepage portfolio at `/#portfolio` features the owner-supplied [Sopchak Natural Health & Wellness](https://sopchakchiro.com/) and [ActiveRx Rehab & Wellness](https://www.activerxrehab.com/) projects. Edit project details in `lib/portfolio.ts` and the locally hosted website previews in `public/images/portfolio`. Portfolio links are available in the Studio navigation and footer.
+
+The reviews section at `/#reviews`, directly below the portfolio, embeds the owner-provided LeadConnector widget from `pay.timemacoriginals.com` (location `kzlo1NUHILsxLko8eYqd`, widget `6ac171bb5143791f59809033`). `components/site/reviews.tsx` preserves the required `lc_reviews_widget` class and loads the provider’s `review-widget.js` script after hydration for automatic iframe sizing. The iframe starts at 600px high, loads lazily, and includes a direct link for opening the hosted reviews separately. Review content and widget styling are managed by the provider.
+
 ## Contact details
 
 Public business identity and support details are configured in `lib/business.ts`. The owner's address, support email and phone populate the footer, contact page and policy contact blocks. The legal business name is still awaiting the owner's verified details.
