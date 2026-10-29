@@ -48,14 +48,20 @@ export function Header() {
         <span>
           INDEPENDENT THINKING. <strong>LOCAL UNDERSTANDING.</strong>
         </span>
-        <Link href="/locations">
-          Udupi · Manipal · Mangalore <ArrowUpRight size={12} />
-        </Link>
       </div>
       <header className="site-header wrap">
         <Brand />
         <DesktopNavigation key={pathname} pathname={pathname} />
         <div className="header-actions">
+          <Link
+            href="/free-marketing-report"
+            className="button button-accent nav-cta nav-report-cta"
+            aria-current={
+              pathname === '/free-marketing-report' ? 'page' : undefined
+            }
+          >
+            Free marketing report <ArrowUpRight size={16} aria-hidden="true" />
+          </Link>
           <Link href="/contact" className="button button-dark nav-cta">
             <span className="nav-cta-full">Let’s talk growth</span>
             <span className="nav-cta-short">Let’s talk</span>
@@ -132,6 +138,7 @@ export function Footer() {
             <Link href="/approach">Our approach</Link>
             <Link href="/about">About Timemac</Link>
             <Link href="/insights">Insights & ideas</Link>
+            <Link href="/free-marketing-report">Free marketing report</Link>
             <Link href="/contact">Let’s talk</Link>
           </div>
           <div className="footer-column">

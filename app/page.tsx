@@ -95,8 +95,11 @@ export default function Home() {
                 ))}
               </ul>
               <div className="editorial-hero-actions">
-                <Link href="/contact" className="button button-accent">
-                  Make your next move <ArrowUpRight size={19} />
+                <Link
+                  href="/free-marketing-report"
+                  className="button button-accent"
+                >
+                  Get your free marketing report <ArrowUpRight size={19} />
                 </Link>
                 <Link href="/services" className="text-link">
                   Explore our services <ArrowRight size={17} />
@@ -106,10 +109,10 @@ export default function Home() {
             <Link href="/services" className="marketing-banner">
               <Image
                 unoptimized
-                src="/images/timemac-marketing-banner.webp"
+                src="/images/timemac-wider-world.webp"
                 alt="Timemac Digital Marketing — connecting your business with a wider world"
-                width={1672}
-                height={941}
+                width={1734}
+                height={907}
                 fetchPriority="high"
                 loading="eager"
               />

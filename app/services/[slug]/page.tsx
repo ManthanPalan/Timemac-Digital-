@@ -5,6 +5,7 @@ import { ArrowUpRight, ArrowDown, Check, Target, Search } from 'lucide-react';
 import { services } from '@/lib/content';
 import { getServiceImage, hostingImage, mapsImage } from '@/lib/service-media';
 import { siteOrigin } from '@/lib/site';
+import { Portfolio } from '@/components/site/portfolio';
 import {
   Breadcrumb,
   Eyebrow,
@@ -219,6 +220,9 @@ export default async function Service({ params }: Props) {
             .map((x) => x.slug)}
         />
       </section>
+      {s.slug === 'web-design' && (
+        <Portfolio eyebrow="SELECTED WEBSITE PROJECTS" />
+      )}
       <CTA />
     </main>
   );

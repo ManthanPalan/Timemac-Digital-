@@ -9,8 +9,8 @@ export function ContactForm() {
         style={{
           display: 'block',
           width: '100%',
-          height: '100%',
-          minHeight: 690,
+          height: 1600,
+          minHeight: 1600,
           border: 'none',
           borderRadius: 8,
         }}
@@ -23,7 +23,7 @@ export function ContactForm() {
         data-deactivation-type="neverDeactivate"
         data-deactivation-value=""
         data-form-name="Contact Form"
-        data-height="690"
+        data-height="1600"
         data-layout-iframe-id="inline-PhEe9M2XrqJ3BzNnPe7S"
         data-form-id="PhEe9M2XrqJ3BzNnPe7S"
         data-cookie-consent="true"

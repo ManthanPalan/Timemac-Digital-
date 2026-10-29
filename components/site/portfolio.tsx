@@ -4,7 +4,11 @@ import { ArrowUpRight } from 'lucide-react';
 import { Eyebrow } from '@/components/site/shared';
 import { portfolioProjects } from '@/lib/portfolio';
 
-export function Portfolio() {
+export function Portfolio({
+  eyebrow = '03 / SELECTED WORK',
+}: {
+  eyebrow?: string;
+}) {
   return (
     <section
       id="portfolio"
@@ -13,7 +17,7 @@ export function Portfolio() {
     >
       <div className="section-heading">
         <div>
-          <Eyebrow>03 / SELECTED WORK</Eyebrow>
+          <Eyebrow>{eyebrow}</Eyebrow>
           <h2 id="portfolio-heading">
             Good work.
             <br />
@@ -22,8 +26,8 @@ export function Portfolio() {
         </div>
         <p>
           <strong>A closer look at what we build.</strong>
-          Explore two healthcare websites we’ve brought to life, from the first
-          impression to the next appointment.
+          Explore websites we’ve brought to life for healthcare practices,
+          industrial businesses and independent voices.
         </p>
       </div>
       <div className="portfolio-grid">
@@ -49,7 +53,7 @@ export function Portfolio() {
                 <Image
                   unoptimized
                   src={project.image}
-                  alt={`${project.name} homepage preview`}
+                  alt={project.imageAlt}
                   width={1440}
                   height={1000}
                   loading="lazy"

@@ -66,6 +66,24 @@ export default function Healthcare() {
           </div>
         </div>
       </section>
+      <section
+        className="brand-campaign wrap"
+        aria-label="Healthcare-first digital marketing"
+      >
+        <Link href="/free-marketing-report">
+          <Image
+            unoptimized
+            src="/images/timemac-healthcare-banner.webp"
+            alt="Timemac — Your work. A wider world. Healthcare-first digital marketing."
+            width={1734}
+            height={907}
+          />
+          <span className="brand-campaign-caption">
+            Give your practice a clearer starting point. Get your free marketing
+            report. <ArrowUpRight size={20} />
+          </span>
+        </Link>
+      </section>
       <section className="healthcare-manifesto">
         <div className="wrap">
           <Eyebrow>MORE THAN ANOTHER MARKETING CATEGORY</Eyebrow>

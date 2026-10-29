@@ -10,6 +10,7 @@ import './navigation.css';
 import './typography.css';
 import './portfolio.css';
 import './reviews.css';
+import './report.css';
 import { Header, Footer } from '@/components/site/shell';
 
 export const metadata: Metadata = {

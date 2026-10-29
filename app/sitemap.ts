@@ -13,6 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/approach',
     '/insights',
     '/contact',
+    '/free-marketing-report',
     ...policyLinks.map((link) => link.href),
     ...services.map((x) => '/services/' + x.slug),
     ...industries.map((x) => '/industries/' + x.slug),

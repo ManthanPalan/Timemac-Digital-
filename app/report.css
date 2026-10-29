@@ -1,0 +1,146 @@
+.report-hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: start;
+  gap: 40px;
+  padding-block: 32px 56px;
+}
+.report-hero h1 {
+  font-size: clamp(44px, 5vw, 76px);
+  line-height: 1.08;
+  margin-block: 26px;
+}
+.report-hero h1 em {
+  font-family: 'Bodoni Moda', Georgia, serif;
+  color: var(--signal);
+  font-weight: 400;
+}
+.report-hero p {
+  max-width: 48ch;
+  color: var(--copy-color);
+  font-size: var(--copy-body-size);
+}
+.report-hero .button {
+  margin-top: 28px;
+}
+.report-small-note {
+  display: block;
+  font-size: 11px;
+  line-height: 1.7;
+  letter-spacing: 0.07em;
+  margin-top: 20px;
+}
+.report-hero > img {
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--border);
+}
+.report-benefits {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding-bottom: 64px;
+  gap: 36px;
+}
+.report-benefits article {
+  border-top: 1px solid var(--ink);
+  padding-top: 24px;
+}
+.report-benefits svg {
+  color: var(--signal);
+  margin-bottom: 18px;
+}
+.report-benefits h2 {
+  font-size: 23px;
+  letter-spacing: -0.04em;
+  margin-bottom: 10px;
+}
+.report-benefits p {
+  color: var(--copy-color);
+  max-width: 36ch;
+}
+.report-form {
+  min-width: 0;
+  padding: 0;
+}
+.report-form-help {
+  padding: 12px 0 0;
+  font-size: 13px;
+  color: var(--copy-color);
+}
+.report-form-help a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.brand-campaign {
+  margin-bottom: 56px;
+}
+.brand-campaign a {
+  display: block;
+}
+.brand-campaign img {
+  width: 100%;
+  height: auto;
+}
+.brand-campaign-caption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 14px;
+}
+.cta-inner.cta-with-art {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+.cta-art img {
+  width: 100%;
+  height: auto;
+}
+.cta-report-link {
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  margin-top: 20px;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+@media (max-width: 900px) {
+  .report-hero {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .report-hero {
+    padding-block: 24px 40px;
+  }
+  .report-hero > img {
+    max-width: 700px;
+  }
+  .report-benefits {
+    gap: 24px;
+  }
+  .cta-inner.cta-with-art {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .cta-art {
+    max-width: 700px;
+  }
+}
+@media (max-width: 600px) {
+  .report-benefits {
+    grid-template-columns: 1fr;
+    padding-bottom: 40px;
+  }
+  .report-benefits p {
+    max-width: none;
+  }
+  .brand-campaign {
+    margin-bottom: 36px;
+  }
+}

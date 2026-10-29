@@ -121,7 +121,7 @@ export function ServiceGrid({
 export function CTA() {
   return (
     <section className="cta-section">
-      <div className="wrap cta-inner">
+      <div className="wrap cta-inner cta-with-art">
         <div>
           <Eyebrow>YOUR NEXT CHAPTER STARTS HERE</Eyebrow>
           <h2>
@@ -133,12 +133,23 @@ export function CTA() {
           <Link href="/contact" className="button button-dark">
             Let’s talk growth <ArrowUpRight size={18} />
           </Link>
+          <Link href="/free-marketing-report" className="cta-report-link">
+            Start with a free marketing report <ArrowUpRight size={18} />
+          </Link>
         </div>
-        <ArrowUpRight
-          className="cta-direction-arrow"
-          strokeWidth={0.8}
-          aria-hidden="true"
-        />
+        <Link
+          href="/free-marketing-report"
+          className="cta-art"
+          aria-label="Get your free marketing report"
+        >
+          <Image
+            unoptimized
+            src="/images/timemac-wider-world.webp"
+            alt="Timemac — Your work. A wider world. An orange arrow pointing upwards."
+            width={1734}
+            height={907}
+          />
+        </Link>
         <span className="cta-side-note">
           GOOD THINGS GROW
           <br />

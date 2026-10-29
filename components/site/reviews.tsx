@@ -43,7 +43,7 @@ export function Reviews() {
             display: 'block',
             minWidth: '100%',
             width: '100%',
-            height: 600,
+            height: 1000,
             border: 0,
           }}
         />

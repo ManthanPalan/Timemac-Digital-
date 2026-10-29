@@ -1,4 +1,4 @@
-import { articles, industries, locations, services } from '@/lib/content';
+import { articles, industries, services } from '@/lib/content';
 import { policyLinks } from '@/lib/policies';
 
 export type NavigationLink = {
@@ -27,7 +27,10 @@ export const navigationGroups: NavigationGroup[] = [
       label: service.title,
       description: service.summary,
     })),
-    related: [{ href: '/pricing', label: 'Pricing & project scope' }],
+    related: [
+      { href: '/free-marketing-report', label: 'Free marketing report' },
+      { href: '/pricing', label: 'Pricing & project scope' },
+    ],
   },
   {
     id: 'industries',
@@ -41,17 +44,6 @@ export const navigationGroups: NavigationGroup[] = [
     related: [{ href: '/healthcare', label: 'Our healthcare specialism' }],
   },
   {
-    id: 'locations',
-    label: 'Locations',
-    overview: { href: '/locations', label: 'Meet your local growth partner' },
-    description: 'Three places. One coast. A shared sense of possibility.',
-    links: locations.map((location) => ({
-      href: `/locations/${location.slug}`,
-      label: location.name,
-      description: location.note,
-    })),
-  },
-  {
     id: 'studio',
     label: 'Studio',
     overview: { href: '/about', label: 'About Timemac' },
@@ -60,7 +52,8 @@ export const navigationGroups: NavigationGroup[] = [
       {
         href: '/#portfolio',
         label: 'Our portfolio',
-        description: 'Explore healthcare websites we’ve brought to life.',
+        description:
+          'Explore websites for healthcare, industry and independent voices.',
       },
       {
         href: '/approach',

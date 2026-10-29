@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import {
   ArrowUpRight,
   ArrowRight,
@@ -27,6 +28,24 @@ export default function Services() {
         accent="Together."
         description="Six connected capabilities. One clear goal: help the right people discover your business, get in touch and keep coming back."
       />
+      <section
+        className="brand-campaign wrap"
+        aria-label="A better first impression"
+      >
+        <Link href="/free-marketing-report">
+          <Image
+            unoptimized
+            src="/images/timemac-first-impression.webp"
+            alt="Timemac — Your website. A better first impression. Healthcare-first digital marketing."
+            width={1733}
+            height={908}
+          />
+          <span className="brand-campaign-caption">
+            A better first impression starts with a clearer picture. Get your
+            free marketing report. <ArrowUpRight size={20} />
+          </span>
+        </Link>
+      </section>
       <section className="wrap service-rows service-image-rows">
         {services.map((s, i) => {
           const Icon = icons[s.icon];
