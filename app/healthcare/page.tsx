@@ -70,7 +70,7 @@ export default function Healthcare() {
         className="brand-campaign wrap"
         aria-label="Healthcare-first digital marketing"
       >
-        <Link href="/free-marketing-report">
+        <Link href="/contact?industry=healthcare">
           <Image
             unoptimized
             src="/images/timemac-healthcare-banner.webp"
@@ -79,8 +79,8 @@ export default function Healthcare() {
             height={907}
           />
           <span className="brand-campaign-caption">
-            Give your practice a clearer starting point. Get your free marketing
-            report. <ArrowUpRight size={20} />
+            Give your practice a clearer starting point. Let’s talk about your
+            goals. <ArrowUpRight size={20} />
           </span>
         </Link>
       </section>

@@ -64,8 +64,8 @@ The healthcare photograph and social preview are original generated assets. They
 
 Service imagery is supplied by the site owner and mapped in `lib/service-media.ts`. Photography fills its frame; logos and illustrations retain their full composition. Hosting sits within Web Design & Development. The upload `Seo-CrwgpcDN.avif` depicts the Chrome logo and is not used to represent SEO or Google Ads. The Google Ads mark comes from [Google's product branding asset](https://www.gstatic.com/images/branding/productlogos/ads/v5/192px.svg), linked from [Google Ads](https://business.google.com/us/google-ads/), and is stored locally as a PNG.
 
-## Free marketing report
+## Temporarily unavailable page
 
-`/free-marketing-report` embeds the owner-supplied LeadConnector prospecting widget (`6ae321378baf771302237e64`). The embed runs in a separate iframe document because its dependencies inject global CSS; its height follows the form via a ResizeObserver and source-checked messages. The provider manages fields, report generation and submissions. No report requests are submitted during development checks. The page is linked from the homepage, Services navigation (desktop and mobile), shared calls to action, footer and sitemap.
+`/free-marketing-report` temporarily redirects to `/` with HTTP 307 via `next.config.ts`. The page is removed from navigation, calls to action and the sitemap. The inactive form component and styles are retained for a future return.
 
-The three owner-supplied October 2026 campaign images are served as local WebP assets, retaining the full artwork: wider-world imagery on the homepage and shared calls to action, first-impression artwork on Services and the report page, and the healthcare banner on Healthcare.
+The three owner-supplied October 2026 campaign images are served as local WebP assets, retaining the full artwork: wider-world imagery on the homepage and shared calls to action, first-impression artwork on Services, and the healthcare banner on Healthcare.

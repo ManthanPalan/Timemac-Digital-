@@ -28,7 +28,6 @@ export const navigationGroups: NavigationGroup[] = [
       description: service.summary,
     })),
     related: [
-      { href: '/free-marketing-report', label: 'Free marketing report' },
       { href: '/pricing', label: 'Pricing & project scope' },
     ],
   },

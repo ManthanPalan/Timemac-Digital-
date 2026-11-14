@@ -95,11 +95,8 @@ export default function Home() {
                 ))}
               </ul>
               <div className="editorial-hero-actions">
-                <Link
-                  href="/free-marketing-report"
-                  className="button button-accent"
-                >
-                  Get your free marketing report <ArrowUpRight size={19} />
+                <Link href="/contact" className="button button-accent">
+                  Let’s talk growth <ArrowUpRight size={19} />
                 </Link>
                 <Link href="/services" className="text-link">
                   Explore our services <ArrowRight size={17} />

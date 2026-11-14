@@ -32,7 +32,7 @@ export default function Services() {
         className="brand-campaign wrap"
         aria-label="A better first impression"
       >
-        <Link href="/free-marketing-report">
+        <Link href="/contact">
           <Image
             unoptimized
             src="/images/timemac-first-impression.webp"
@@ -41,8 +41,8 @@ export default function Services() {
             height={908}
           />
           <span className="brand-campaign-caption">
-            A better first impression starts with a clearer picture. Get your
-            free marketing report. <ArrowUpRight size={20} />
+            A better first impression starts with a conversation. Let’s talk
+            about your business. <ArrowUpRight size={20} />
           </span>
         </Link>
       </section>

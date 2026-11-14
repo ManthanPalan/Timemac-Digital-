@@ -133,14 +133,11 @@ export function CTA() {
           <Link href="/contact" className="button button-dark">
             Let’s talk growth <ArrowUpRight size={18} />
           </Link>
-          <Link href="/free-marketing-report" className="cta-report-link">
-            Start with a free marketing report <ArrowUpRight size={18} />
-          </Link>
         </div>
         <Link
-          href="/free-marketing-report"
+          href="/contact"
           className="cta-art"
-          aria-label="Get your free marketing report"
+          aria-label="Start a conversation with Timemac"
         >
           <Image
             unoptimized
